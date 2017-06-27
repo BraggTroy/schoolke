@@ -1,0 +1,31 @@
+商品信息：
+一、商品显示信息
+    1.商品名 - goodsName   //长度不超过67字符
+    2.校园价 - schoolPrice
+    3.原价 - originPrice   //
+    4.促销信息 - sell   //长度不超过26个字符
+    5.所属校区 - belongTo   //
+    6.更多信息 - remark   //长度不超过66字符
+    7.发布时间 - publishTime    //系统当时时间
+    8.校友留言 - notices   //数据库每条分割<schoolke>，前台数组存储，每条不超过50字符
+        8.1每条留言notice - {notice:'留言内容',author:'作者',time:'发表时间'}
+
+二、商品隐藏信息
+    1.改数据编号 - id
+    2.商品编号 - goodsId
+    3.所属用户 - master
+    4.二级分类 - classifyLower   //小分类
+    5.一级分类 - classifyHigh    //大分类
+
+        3.1跟随用户的信息 - Ta还在售 - masterGoods
+
+
+
+==================================
+personal.html?id=
+goodsDetail.html?goodsId={{id}}&&type=ON 查看在售商品信息
+
+publishGoods.html?id={{id}}&type=UPDATE 编辑
+publishGoods.html?id=&type=NEW  新建
+
+getMessage.do用同一个接口

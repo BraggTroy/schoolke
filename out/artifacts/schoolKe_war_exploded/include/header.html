@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>header</title>
+</head>
+<body>
+<header id="header-template">
+    <div id="ke-header-ad"></div>
+    <div class="ke-header-top">
+        <div class="ke-ht-inner">
+            <div class="ke-indexLink"><a href="index.html">校园客首页</a></div>
+            <div class="ke-userOpt">
+                <label>欢迎来到校园客 <a href="login.html" target="_self" class="ke-login">请登录</a></label>
+                <a href="register.html" target="_self" class="ke-register">免费注册</a>
+            </div>
+            <div class="ke-headerMenu">
+                <div class="ke-hMenu pc-nav">
+                    <div class="pc-nav-opt">
+                        <a href="javascript:;">网站导航 &or;</a>
+                    </div>
+                    <div class="pc-nav-map">    <!--网站导航框-->
+                        <dl>
+                            <dt>商品分类</dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="classify.html?type=menu&words=书籍资料">书籍资料</a></li>
+                                    <li><a href="classify.html?type=menu&words=手机电脑">手机电脑</a></li>
+                                    <li><a href="classify.html?type=menu&words=鞋服配饰">鞋服配饰</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="classify.html?type=menu&words=美妆洗护">美妆洗护</a></li>
+                                    <li><a href="classify.html?type=menu&words=家居电器">家居电器</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="classify.html?type=menu&words=生活宠物">生活宠物</a></li>
+                                    <li><a href="classify.html?type=menu&words=其他">其他</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>站长推荐</dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="https://2.taobao.com/" target="_blank">闲鱼</a></li>
+                                    <li><a href="http://www.aihuishou.com/" target="_blank">爱回收</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="http://suzhou.jiu6.com/" target="_blank">苏州二手网</a></li>
+                                    <li><a href="http://www.kongfz.com/" target="_blank">孔夫子旧书网</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>校园客官方信息</dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="notice.html" target="_blank">公告</a></li>
+                                    <li><a href="suggest.html" target="_blank">意见反馈</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+
+                </div>
+                <div class="ke-hMenu mob">
+                    <div class="pc-nav-opt">
+                        <a href="javascript:;">掌上商城</a>
+                    </div>
+                    <div class="ke-hm-code">
+                        <img src="images/qrcode.png">
+                        <p>校园客掌上商城</p>
+                    </div>
+                </div>
+                <div class="ke-hMenu per">
+                    <div class="pc-nav-opt">
+                        <a href="personal.html" class="ke-personal">我的校园客</a>
+                    </div>
+                    <div class="exit-box">
+                        <a href="javascript:;" id="exit">退出登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--顶部导航-->
+
+    <div class="ke-header-main">
+        <div class="ke-hMain-in">
+            <div class="logo-box">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png"></a>
+                </div>
+                <div class="logo-others"></div>
+            </div>
+            <div class="ke-search-form">
+                <div class="s-form">
+                        <div class="formBox">
+                            <div class="ke-form-left">
+                                <input type="text" id="ke-search" name="keWords">
+                            </div>
+                            <input type="submit" id="ke-submit" value="搜索">
+                        </div>
+                </div>
+                <div class="hot-words">
+                    <ul>
+                        <li>手机</li>
+                        <li>单反镜头</li>
+                        <li>NewBalance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<nav id="nav-template">
+    <div class="ke-width" style="clear: both;">
+    <div class="nav-allbtn">
+        <div>
+            <span class="all-span">全部商品分类</span>
+            <span class="arrow"><img src="images/arrow.png"></span>
+        </div>
+        <div class="main-nav-list">
+            <ul class="nav-ul">
+                <li><a href="classify.html?type=navList&words=教科书">教科书</a></li>
+                <li><a href="classify.html?type=navList&words=参考资料">参考资料</a></li>
+                <li><a href="classify.html?type=navList&words=笔记">笔记</a></li>
+                <!--<div class="navList">&lt;!&ndash;800&ndash;&gt;
+                    <div class="navList-main">
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="gongxue"></i><span>工学</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="search.html?type=lists&words=材料类">材料类</a>
+                                <a href="#" class="red">机械类</a>
+                                <a href="#">能源动力类</a>
+                                <a href="#" class="red">电气信息类</a>
+                                <a href="#">土建类</a>
+                                <a href="#">水利类</a>
+                                <a href="#">测绘类</a>
+                                <a href="#">环境与安全类</a>
+                                <a href="#">化学与制药类</a>
+                                <a href="#">交通运输类</a>
+                                <a href="#">海洋工程类</a>
+                                <a href="#">轻工纺织食品类</a>
+                                <a href="#">航空航天类</a>
+                                <a href="#">武器</a>
+                                <a href="#">农业工程类</a>
+                                <a href="#">生物工程类</a>
+                                <a href="#">林业工程类</a>
+                                <a href="#">公安技术类</a>
+                                <a href="#">工程力学类</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="lixue"></i><span>理学</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#" class="red">数学类</a>
+                                <a href="#">化学类</a>
+                                <a href="#">生物科学类</a>
+                                <a href="#">力学</a>
+                                <a href="#" class="red">电子信息科学类</a>
+                                <a href="#">材料科学类</a>
+                                <a href="#">环境科学类</a>
+                                <a href="#">心理学类</a>
+                                <a href="#">统计学类</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="wenxue"></i><span>文学</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#">中国语言文学类</a>
+                                <a href="#" class="red">外国语言文学类</a>
+                                <a href="#">新闻传播学类</a>
+                                <a href="#">艺术类</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="zhexue"></i><span>哲学</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#">哲学</a>
+                                <a href="#">逻辑学</a>
+                                <a href="#">宗教学</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="qitaxuexi"></i><span>其他学系</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#" class="red">经济学</a>
+                                <a href="#">管理学</a>
+                                <a href="#">教育学</a>
+                                <a href="#">法学</a>
+                                <a href="#">历史学</a>
+                                <a href="#">农学</a>
+                                <a href="#">医学</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navList-ad-right one-pic">
+                        <img src="images/adimg-1.2.jpg">
+                    </div>
+                    <div class="clear"></div>
+                    <div class="navList-ad-bottom">
+                        <img src="images/adimg-1.1.jpg">
+                        <img src="images/adimg-1.3.jpg">
+                    </div>
+                </div>-->
+            </ul>
+            <ul class="nav-ul">
+                <li><a href="classify.html?type=navList&words=手机">手机</a></li>
+                <li><a href="classify.html?type=navList&words=电脑">电脑</a></li>
+                <li><a href="classify.html?type=navList&words=周边">周边</a></li>
+                <li><a href="classify.html?type=navList&words=数码">数码</a></li>
+               <!-- <div class="navList">&lt;!&ndash;800&ndash;&gt;
+                    <div class="navList-main">
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="shouji"></i><span>手机</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#" class="red">小米</a>
+                                <a href="#">华为</a>
+                                <a href="#" class="red">苹果</a>
+                                <a href="#">三星</a>
+                                <a href="#">魅族</a>
+                                <a href="#">OPPO</a>
+                                <a href="#">诺基亚</a>
+                                <a href="#">vivo</a>
+                                <a href="#">中兴</a>
+                                <a href="#">索尼</a>
+                                <a href="#">酷派</a>
+                                <a href="#">锤子</a>
+                                <a href="#">摩托罗拉</a>
+                                <a href="#">联想</a>
+                                <a href="#">HTC</a>
+                                <a href="#">乐视</a>
+                                <a href="#">努比亚</a>
+                                <a href="#">金立</a>
+                                <a href="#">OnePlus/一加</a>
+                                <a href="#">海信</a>
+                                <a href="#">360</a>
+                                <a href="#">天语</a>
+                                <a href="#">Meitu/美图</a>
+                                <a href="#">步步高</a>
+                                <a href="#">朵唯</a>
+                                <a href="#">长虹</a>
+                                <a href="#">中国移动</a>
+                                <a href="#">夏普</a>
+                                <a href="#">BlackBerry/黑莓</a>
+                                <a href="#">其他手机类型</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="diannao"></i><span>电脑</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#">联想</a>
+                                <a href="#">惠普</a>
+                                <a href="#">戴尔</a>
+                                <a href="#">苹果</a>
+                                <a href="#">华硕</a>
+                                <a href="#">神舟</a>
+                                <a href="#">ThinkPad</a>
+                                <a href="#">Acer宏碁</a>
+                                <a href="#">机械革命</a>
+                                <a href="#">华为</a>
+                                <a href="#">微软</a>
+                                <a href="#">小米</a>
+                                <a href="#">雷蛇</a>
+                                <a href="#">机械师</a>
+                                <a href="#">东芝</a>
+                                <a href="#">海尔</a>
+                                <a href="#">清华同方</a>
+                                <a href="#">镭波</a>
+                                <a href="#">长城</a>
+                                <a href="#">TCL</a>
+                                <a href="#">方正</a>
+                                <a href="#">索尼</a>
+                                <a href="#">金属大师</a>
+                                <a href="#">其他电脑</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="shuma"></i><span>数码</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#">数码相机</a>
+                                <a href="#">微单</a>
+                                <a href="#">单反相机</a>
+                                <a href="#">拍立得</a>
+                                <a href="#">运动相机</a>
+                                <a href="#">摄像机镜头</a>
+                                <a href="#" class="red">存储卡</a>
+                                <a href="#">三脚架</a>
+                                <a href="#">滤镜</a>
+                                <a href="#">闪光灯</a>
+                                <a href="#">其他数码产品</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="zhoubianpeijian"></i><span>周边配件</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#">手机壳</a>
+                                <a href="#" class="red">贴膜</a>
+                                <a href="#" class="red">存储卡/U盘</a>
+                                <a href="#">数据线</a>
+                                <a href="#">充电器</a>
+                                <a href="#">耳机</a>
+                                <a href="#" class="red">移动电源</a>
+                                <a href="#">手机支架</a>
+                                <a href="#">音箱</a>
+                                <a href="#">MP3/MP4</a>
+                                <a href="#">键盘</a>
+                                <a href="#">鼠标</a>
+                                <a href="#">鼠标垫</a>
+                                <a href="#">麦克风</a>
+                                <a href="#">手机饰品</a>
+                                <a href="#">其他配件</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="zhinengshebei"></i><span>智能设备</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#" class="red">智能手环</a>
+                                <a href="#">智能手表</a>
+                                <a href="#">无人机</a>
+                                <a href="#">智能台灯</a>
+                                <a href="#">代步机</a>
+                                <a href="#">其他智能设备</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navList-ad-right one-pic">
+                        <img src="images/adimg-2.2.jpg">
+                    </div>
+                    <div class="clear"></div>
+                    <div class="navList-ad-bottom">
+
+                    </div>
+                </div>-->
+            </ul>
+            <ul class="nav-ul">
+                <li><a href="classify.html?type=navList&words=男装">男装</a></li>
+                <li><a href="classify.html?type=navList&words=女装">女装</a></li>
+                <li><a href="classify.html?type=navList&words=鞋袜">鞋袜</a></li>
+                <li><a href="classify.html?type=navList&words=服饰配件">服饰配件</a></li>
+                <!--<div class="navList">&lt;!&ndash;800&ndash;&gt;
+                    <div class="navList-main">
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="nanzhuang"></i><span>男装</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#">羽绒服</a>
+                                <a href="#" class="red">夹克</a>
+                                <a href="#">风衣</a>
+                                <a href="#">棒球服</a>
+                                <a href="#">皮衣</a>
+                                <a href="#">棉衣</a>
+                                <a href="#">牛仔</a>
+                                <a href="#">卫衣</a>
+                                <a href="#">衬衫</a>
+                                <a href="#">针织衫/毛衣</a>
+                                <a href="#">休闲裤/西裤</a>
+                                <a href="#">牛仔裤</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="nvzhuang"></i><span>女装</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#">毛衣</a>
+                                <a href="#">毛呢外套</a>
+                                <a href="#">羽绒服</a>
+                                <a href="#">棉衣</a>
+                                <a href="#">皮草</a>
+                                <a href="#">针织衫/毛衣</a>
+                                <a href="#">衬衫</a>
+                                <a href="#">休闲裤/西裤</a>
+                                <a href="#">牛仔裤</a>
+                                <a href="#" class="red">连衣裙</a>
+                                <a href="#">半身裙</a>
+                                <a href="#">其他女装类别</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="xiezi"></i><span>鞋子</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#">跑步鞋</a>
+                                <a href="#">板鞋</a>
+                                <a href="#" class="red">休闲鞋</a>
+                                <a href="#" class="red">篮球鞋</a>
+                                <a href="#">帆布鞋</a>
+                                <a href="#">专项运动鞋</a>
+                                <a href="#">训练鞋</a>
+                                <a href="#">乒羽网鞋</a>
+                                <a href="#">足球鞋</a>
+                                <a href="#">男靴</a>
+                                <a href="#">商务休闲鞋</a>
+                                <a href="#">正装鞋</a>
+                                <a href="#">传统布鞋</a>
+                                <a href="#">皮鞋</a>
+                                <a href="#">拖鞋</a>
+                                <a href="#">凉鞋</a>
+                                <a href="#" class="red">女靴</a>
+                                <a href="#">高跟鞋</a>
+                                <a href="#">松糕鞋</a>
+                                <a href="#">马丁靴</a>
+                                <a href="#">坡跟鞋</a>
+                                <a href="#">内增高</a>
+                                <a href="#">其他鞋子类型</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="wazi"></i><span>袜子</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#">男袜</a>
+                                <a href="#">女袜</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="zhuangshi"></i><span>装饰</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#">男生装饰</a>
+                                <a href="#">女生装饰</a>
+                                <a href="#">中性装饰</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navList-ad-right">
+                        <img src="images/adimg-3.1.jpg">
+                        <img src="images/adimg-3.2.jpg">
+                    </div>
+                    <div class="clear"></div>
+                    <div class="navList-ad-bottom">
+
+
+                    </div>
+                </div>-->
+            </ul>
+            <ul class="nav-ul">
+                <li><a href="classify.html?type=navList&words=美妆">美妆</a></li>
+                <li><a href="classify.html?type=navList&words=日用洗护">日用洗护</a></li>
+                <li><a href="classify.html?type=navList&words=其他">其他</a></li>
+                <!--<div class="navList">&lt;!&ndash;800&ndash;&gt;
+                    <div class="navList-main">
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="meizhuang"></i><span>美妆</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#">男士护肤</a>
+                                <a href="#" class="red">面膜</a>
+                                <a href="#">洁面</a>
+                                <a href="#">防晒</a>
+                                <a href="#">爽肤水</a>
+                                <a href="#">眼霜</a>
+                                <a href="#">乳液</a>
+                                <a href="#" class="red">面霜</a>
+                                <a href="#">精华</a>
+                                <a href="#">卸妆</a>
+                                <a href="#">眼线</a>
+                                <a href="#">粉底液</a>
+                                <a href="#">BB霜</a>
+                                <a href="#">睫毛膏</a>
+                                <a href="#">唇膏</a>
+                                <a href="#">腮红</a>
+                                <a href="#">香水</a>
+                                <a href="#">精油</a>
+                                <a href="#">身体护理</a>
+                                <a href="#">脱毛</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="xihuyongping"></i><span>洗护用品</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#">洗发水</a>
+                                <a href="#">沐浴露</a>
+                                <a href="#" class="red">护发素</a>
+                                <a href="#">头发造型</a>
+                                <a href="#">染发膏</a>
+                                <a href="#">假发</a>
+                                <a href="#">身体乳液</a>
+                                <a href="#">漱口水</a>
+                                <a href="#">洗衣液</a>
+                                <a href="#">清洁剂</a>
+                                <a href="#">抽纸</a>
+                                <a href="#">香薰</a>
+                                <a href="#">其他洗护</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="qitayongpin"></i><span>其他用品</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#">其他</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navList-ad-right">
+
+                    </div>
+                    <div class="clear"></div>
+                    <div class="navList-ad-bottom">
+                        <img src="images/adimg-4.2.jpg">
+                    </div>
+                </div>-->
+            </ul>
+            <ul class="nav-ul">
+                <li><a href="classify.html?type=navList&words=家居">家居</a></li>
+                <li><a href="classify.html?type=navList&words=电器">电器</a></li>
+                <li><a href="classify.html?type=navList&words=家用其他">家用其他</a></li>
+                <!--<div class="navList">&lt;!&ndash;800&ndash;&gt;
+                    <div class="navList-main">
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="jiaju"></i><span>家居</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#" class="red">电脑桌</a>
+                                <a href="#">书架</a>
+                                <a href="#">花架</a>
+                                <a href="#">椅子</a>
+                                <a href="#">电脑椅</a>
+                                <a href="#">书桌</a>
+                                <a href="#">鞋柜</a>
+                                <a href="#">衣架</a>
+                                <a href="#">床垫</a>
+                                <a href="#">其他家居用品</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="dianqi"></i><span>电器</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#" class="red">吹风机</a>
+                                <a href="#" class="red">电饭煲</a>
+                                <a href="#">剃须刀</a>
+                                <a href="#">锅类</a>
+                                <a href="#">电热毯</a>
+                                <a href="#">加湿器</a>
+                                <a href="#">暖风机</a>
+                                <a href="#">取暖器</a>
+                                <a href="#">豆浆机</a>
+                                <a href="#">空气净化器</a>
+                                <a href="#">个人护理</a>
+                                <a href="#">生活电器</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="jiayongqita"></i><span>家用其他</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#">家用其他</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navList-ad-right">
+                        <img src="images/adimg-5.1.jpg">
+                    </div>
+                    <div class="clear"></div>
+                    <div class="navList-ad-bottom">
+                    </div>
+                </div>-->
+            </ul>
+            <ul class="nav-ul">
+                <li><a href="classify.html?type=navList&words=生活">生活</a></li>
+                <li><a href="classify.html?type=navList&words=宠物">宠物</a></li>
+                <li><a href="classify.html?type=navList&words=宠物其他">宠物其他</a></li>
+               <!-- <div class="navList">&lt;!&ndash;800&ndash;&gt;
+                    <div class="navList-main">
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="gougou"></i><span>狗狗</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#" class="red">宠物狗</a>
+                                <a href="#">狗粮</a>
+                                <a href="#">狗笼</a>
+                                <a href="#">玩具</a>
+                                <a href="#">医疗保健</a>
+                                <a href="#">牵引用品</a>
+                                <a href="#">服饰</a>
+                                <a href="#">拾便器（铲屎官专用）</a>
+                                <a href="#">狗狗其他</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="maomao"></i><span>猫猫</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#" class="red">宠物猫</a>
+                                <a href="#">猫粮</a>
+                                <a href="#">猫笼猫窝</a>
+                                <a href="#">玩具</a>
+                                <a href="#">医疗保健</a>
+                                <a href="#">牵引用品</a>
+                                <a href="#">服饰</a>
+                                <a href="#">猫砂</a>
+                                <a href="#">拾便器（铲屎官专用）</a>
+                                <a href="#">猫猫其他</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="xiaochong"></i><span>小宠</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#" class="red">仓鼠/龙猫</a>
+                                <a href="#">仓鼠/龙猫其他</a>
+                                <a href="#">兔子</a>
+                                <a href="#">兔子其他</a>
+                                <a href="#" class="red">乌龟</a>
+                                <a href="#">乌龟其他</a>
+                                <a href="#" class="red">爬行</a>
+                                <a href="#">爬行其他</a>
+                                <a href="#">鸟</a>
+                                <a href="#">鸟其他</a>
+                                <a href="#">其他小宠</a>
+                            </div>
+                        </div>
+                        <div class="navList-line">
+                            <div class="navList-t">
+                                <i class="shuizu"></i><span>水族</span>
+                            </div>
+                            <div class="navList-l">
+                                <a href="#" class="red">鱼类</a>
+                                <a href="#">鱼其他</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navList-ad-right one-pic">
+                        <img src="images/adimg-6.1.jpg">
+                    </div>
+                    <div class="clear"></div>
+                    <div class="navList-ad-bottom">
+
+                    </div>
+                </div>-->
+            </ul>
+        </div>
+    </div>
+    <div class="nav-list">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="classify.html?type=menu&words=书籍资料">书籍资料</a></li>
+            <li><a href="classify.html?type=menu&words=手机电脑">手机电脑</a></li>
+            <li><a href="classify.html?type=menu&words=鞋服配饰">鞋服配饰</a></li>
+            <li><a href="classify.html?type=menu&words=美妆洗护">美妆洗护</a></li>
+            <li><a href="classify.html?type=menu&words=家居电器">家居电器</a></li>
+            <li><a href="classify.html?type=menu&words=生活宠物">生活宠物</a></li>
+            <li><a href="classify.html?type=menu&words=其他">其他</a></li>
+        </ul>
+    </div>
+    </div>
+</nav>
+<script src="../js/common/js/ui.js"></script>
+</body>
+</html>

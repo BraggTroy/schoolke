@@ -1,0 +1,75 @@
+.title{
+    width: 80%;
+    margin: 0 auto;
+}
+.login-form{
+    margin: 100px 0 0 0;
+}
+.form{
+    width: 400px;
+    margin: auto;
+}
+.item{
+    margin: 0 0 20px;
+    border: 1px solid #cccccc;
+}
+.item label{
+    display: inline-block;
+    width: 100px;
+    height: 45px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #333333;
+    text-align: justify;
+    line-height: 45px;
+    float: left;
+    margin: 0 5px;
+}
+.item label:after{
+    content: " ";
+    display: inline-block;
+    width: 100%;
+    height: 0;
+}
+.item input{
+    width: 260px;
+    height: 45px;
+    border:none;
+    padding-left: 10px;
+    color: #333;
+    font-size: 14px;
+}
+#submit{
+    width: 100%;
+    text-align: center;
+    background: #4169E1;
+    color: #ffffff;
+    font: 14px "Microsoft YaHei";
+    cursor: pointer;
+}
+.error{
+    text-align: left;
+    display: none;
+}
+.error span{
+    color: #f10215;
+    font-size: 12px;
+    display: inline-block;
+    border: 1px solid #f40;
+    background: #F4F7F9;
+    padding: 5px 8px;
+}
+.mfooter{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    border-top: 1px solid #cccccc;
+    line-height: 32px;
+    color: #999999;
+}
+.right{
+    float: right;
+    color: #666666;
+    line-height: 80px;
+}

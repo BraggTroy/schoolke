@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>校园客管理平台 - 首页</title>
+
+    <link rel="stylesheet" href="css/common/schoolke-main.css">
+    <link rel="stylesheet" href="css/common/layout.css">
+    <link rel="stylesheet" href="css/m.index.css">
+
+    <link rel="stylesheet" type="text/css" href="css/wangEditor.min.css">
+
+    <script src="js/common/js/ui.js"></script>
+
+    <!--<script data-main="js/m.index.js" src="js/common/js/require.js"></script>-->
+    <script src="js/common/js/echarts.js"></script>
+    <script type="text/javascript" src="js/wangEditor.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div id="header">
+        <div class="header-inner clear">
+            <div class="logo">
+                <a href="m.index.html"><img src="images/logo-txt.png"></a>
+            </div>
+            <div class="admin-box">
+                <span class="current-user">
+                    <span class="admin-name">管理员</span><!--
+                    --><a href="javascript:void(0);" class="admin-exit">退出&nbsp;&nbsp;&or;</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div id="m_main" class="clear">
+        <div id="menu-box">
+            <div class="menu-box-inner">
+                <div class="menu-opt">
+                    收起菜单<i><img src="images/m.menu.png"></i>
+                </div>
+                <ul class="menus-ul">
+                    <li class="menu title">
+                        <a>
+                        <i><img src="images/m.index.png" alt="#"></i>
+                        <span>首页管理</span>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a href="#recommend">
+                        <span>推荐商品管理</span>
+                        <span class="triangle"></span>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a href="#carousel">
+                        <span>轮播广告管理</span>
+                        <span class="triangle"></span>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a href="#notice">
+                        <span>公告管理</span>
+                        <span class="triangle"></span>
+                        </a>
+                    </li>
+
+                    <li class="menu title">
+                        <a>
+                        <i><img src="images/m.goods.png" alt=""></i>
+                        <span>商品管理</span>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a href="#goods">
+                        <span>在售商品管理</span>
+                        <span class="triangle"></span>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a href="#down">
+                        <span>下架商品管理</span>
+                        <span class="triangle"></span>
+                        </a>
+                    </li>
+                    <li class="menu title">
+                        <a>
+                        <i><img src="images/m.user.png" alt=""></i>
+                        <span>用户管理</span>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a href="#user">
+                        <span>用户统计</span>
+                        <span class="triangle"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-opt-open">
+                <i><img src="images/m.menu.png"></i>
+                <div class="menu-open-text">展开菜单</div>
+            </div>
+        </div>
+        <!--主体内容-->
+        <div id="view">
+            <div class="right-content">
+
+                <div class="bread">校园客在线后台管理系统 > 总览</div>
+                <div class="right-main">
+                    <!--<p class="title">总览</p>-->
+                    <div id="goods-chart" style="width: 500px;height: 450px; float: left"></div>
+                    <script>
+                            var myChart = echarts.init(document.getElementById('goods-chart'));
+                            option = {
+                                title : {
+                                    text: '校园客商品统计饼形图',
+                                    subtext: '陈宝俊提供',
+                                    x:''
+                                },
+                                legend: {
+                                    show: true,
+                                    orient: 'vertical',
+                                    left: 'left',
+                                    data: []
+                                },
+                                tooltip : {
+                                    show: true,
+                                    trigger: 'item',
+                                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                },
+                                series : [
+                                    {
+                                        name: '商品状态',
+                                        type: 'pie',
+                                        radius : '55%',
+                                        center: ['50%', '60%'],
+                                        data:[],
+                                        itemStyle: {
+                                            emphasis: {
+                                                shadowBlur: 10,
+                                                shadowOffsetX: 0,
+                                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                            }
+                                        }
+                                    }
+                                ],
+                                color:['#1d5c94','#c23531']
+                            };
+
+                            myChart.setOption(option);
+                            myChart.showLoading();
+                            ajax_get('loadEcharts',{},function (res) {
+
+                                var opt_data = {
+                                    legend:{
+                                        data:['已下架商品','在售商品']
+                                    },
+                                    series:[{
+                                            data:[ {value:res.state_down, name:'已下架商品'},
+                                                {value:res.state_on, name:'在售商品'}]
+                                        }]
+                                }
+                                myChart.hideLoading();
+                                myChart.setOption(opt_data);
+                            },'json')
+
+
+
+                    </script>
+                    <div>
+                        <p><span style="FONT-SIZE: 220px; COLOR: #287cc5;font-family: Webdings;">û</span></p>
+                        <p class="main-text">校园<span class="text-big">客</span>，让生活更<span class="text-big">美好!</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- 模板文件 -->
+<!--推荐商品管理-->
+<script type="text/x-handlebars-template" id="recommend-template">
+<div class="right-content">
+    <div class="bread">首页管理 > 推荐商品管理</div>
+    <div class="right-main">
+        <div class="rd-list">
+            {{#each list}}
+            <div class="rd-item">
+                <div class="rd-item-inner">
+                    <a href="goodsDetail.html?goodsId={{info.goods.id}}&type=ON" target="_blank" class="rd-title-a">
+                        <p class="rd-title">{{info.recommendTitle}}</p>
+                    </a>
+                    <p class="rd-goodsName">{{info.goods.goodsName}}</p>
+                    <div class="rd-images">
+                        {{#each images}}
+                        <div class="rd-img-item" style="background-image: url('images/goodsImages/{{name}}')"></div>
+                        {{/each}}
+                    </div>
+                    <a href="personal.html?id={{info.goods.user.id}}" target="_blank" class="rd-title-a">
+                        <span class="rd-userName">{{info.goods.user.userName}}</span>
+                    </a>
+                </div>
+                <span class="rec-index">{{info.index}}</span>
+                <div class="reconmended-edit">
+                    <span class="rd_opt_item edit_rd" data-id="{{info.id}}" data-index="{{info.index}}">推荐编辑</span>
+                    <span class="rd_opt_item cancel_rd" data-id="{{info.id}}" data-index="{{info.index}}">取消推荐</span>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+</script>
+
+<!--轮播广告管理-->
+<script type="text/x-handlebars-template" id="carousel-template">
+    <div class="right-content">
+        <div class="bread">首页管理 > 轮播广告管理</div>
+        <div class="right-main">
+            <div class="carousel-list">
+            {{#each list}}
+                <div class="carousel-box">
+                    <div class="carousel-image">
+                        <img src="images/carousel/{{name}}">
+                    </div>
+                    <div class="carousel-info">
+                        <div class="inner-div">
+                            <span class="car-title">商品链接：</span>
+                            <input type="text" class="car-good" value="{{address}}" placeholder="http://...">
+                        </div>
+                        <div class="inner-div">
+                            <span class="car-title">商品预览：</span>
+                            <div class="car-rd">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-opt">
+                        <div class="inner-div">
+                            <span class="btn car-confirm" data-value="{{id}}">确&nbsp;&nbsp;定</span>
+                            <a href="{{link}}" target="_blank" class="btn car-check">查&nbsp;&nbsp;看</a>
+                            <span class="btn car-delete" data-value="{{id}}">删&nbsp;&nbsp;除</span>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+                <div id="addCarousel">
+                    <span>添加新轮播广告</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<!--发布公告-->
+<script type="text/x-handlebars-template" id="notice-template">
+    <div class="right-content">
+
+        <div class="bread">首页管理 > 公告管理</div>
+        <div class="right-main">
+            <div class="notice-opt">
+                <div class="item active">发布公告</div>
+                <div class="item">查看公告</div>
+                <div class="item">修改公告</div>
+            </div>
+            <div class="notice-name">
+                <div class="name-inner">
+                    <span class="name-label">请输入公告标题：</span>
+                    <span><input type="text" id="noticeName"></span>
+                </div>
+            </div>
+            <div id="editor-container" class="container">
+                <div id="editor-trigger"><p>（请输入公告内容）</p></div>
+            </div>
+            <div class="notice-submit">
+                <a href="javascript:void(0);" class="btn notice_btn">发布公告</a>
+            </div>
+
+
+        </div>
+    </div>
+</script>
+<script type="text/x-handlebars-template" id="template-template"></script>
+<!--在售商品管理-->
+<script type="text/x-handlebars-template" id="goods-template">
+    <div class="right-content">
+        <div class="bread">商品管理 > 在售商品管理</div>
+        <div class="right-main">
+        {{#each list}}
+            <div class="goods-scan">
+                <div class="scan-img">
+                <a href="goodsDetail.html?goodsId={{id}}&type=ON" target="_blank">
+                <img src="images/goodsImages/{{imageName}}">
+                </a>
+                </div>
+                <div class="scan-price">
+                <label>出手价：</label><span class="sell-price">&yen;{{schoolPrice}}</span>
+                <span class="line-through">全新价：&yen;{{originPrice}}</span>
+                </div><!--
+                        --><div class="scan-name">
+                    <a href="goodsDetail.html?goodsId={{id}}&type=ON" title="{{goodsName}}" target="_blank">{{goodsName}}</a>
+                </div>
+                <div class="on_goods_opt">
+                    <ul>
+                        <li class="admin-down" data-id="{{id}}" data-value="{{goodsName}}">下架</li>
+                        {{#if recommended}}
+                        <li class="admin-recommended">已推荐</li>
+                        {{else}}
+                        <li class="admin-recommend" data-id="{{id}}" data-value="{{goodsName}}">推荐</li>
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+        {{/each}}
+        </div>
+    </div>
+</script>
+
+<!--下架商品管理-->
+<script type="text/x-handlebars-template" id="down-template">
+    <div class="right-content">
+        <div class="bread">商品管理 > 下架商品管理</div>
+        <div class="right-main">
+            {{#each list}}
+            <div class="goods-scan down-goods-scan">
+                <div class="scan-img">
+                    <a href="goodsDetail.html?goodsId={{id}}&type=ON" target="_blank">
+                        <img src="images/goodsImages/{{imageName}}">
+                    </a>
+                </div>
+                <div class="scan-price">
+                    <label>出手价：</label><span class="sell-price">&yen;{{schoolPrice}}</span>
+                    <span class="line-through">全新价：&yen;{{originPrice}}</span>
+                </div><!--
+                    --><div class="scan-name">
+                <a href="goodsDetail.html?goodsId={{id}}&type=ON" title="{{goodsName}}" target="_blank">{{goodsName}}</a>
+                </div>
+                <div class="state_logo">
+                    <span>已下架</span>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</script>
+
+<!--用户反馈管理-->
+<script type="text/x-handlebars-template" id="user-template">
+    <div class="right-content">
+        <div class="bread">用户管理 > 用户统计</div>
+        <div class="right-main">
+            <div class="user-num-box">
+                <span>当前用户总数：{{length}}</span>
+            </div>
+            {{#each list}}
+            <div class="user-box">
+                <div class="user-head-box">
+                    <a href="personal.html?id={{id}}" target="_blank">
+                    <img class="user-head" src="images/headerImages/{{header}}" alt="{{userName}}">
+                    </a>
+                </div>
+                <a class="user-name" href="personal.html?id={{id}}" target="_blank">{{userName}}</a>
+                <p class="user-time">注册日期：{{registrationDate}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</script>
+
+<!----------- 页面小模块的模板 -->
+
+<!--推荐商品操作模板-->
+<script type="text/x-handlebars-template" id="recommend-edit-template">
+    <div class="rd-edit">
+        <div class="rd-edit-item">
+            <label class="rd-label">推荐等级：</label>
+            <input type="text" class="rd-index" value="" placeholder="正整数1,2,3...">
+        </div>
+        <div class="rd-edit-item rd-txt">
+            <label class="rd-label">推荐描述：</label>
+            <textarea class="rd-text" placeholder="描述将在推荐商品的标题栏显示"></textarea>
+        </div>
+    </div>
+</script>
+
+<script src="js/m.index.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>校园客</title>
+
+    <link rel="stylesheet" href="css/common/schoolke-main.css">
+    <link rel="stylesheet" href="css/common/layout.css">
+    <link rel="stylesheet" href="css/goodsDetail.css">
+
+
+    <script src="js/common/js/ui.js"></script>
+
+
+</head>
+<body>
+<header></header>
+<div id="main">
+    <div class="nav-box"></div>
+    <div class="container clear">
+        <div class="goods-detail-container ke-width clear">
+        </div>
+
+        <!--校友留言-->
+        <div class="students-notice">
+        <div class="students-notice-inner ke-width">
+            <div class="notice-title-box">
+                <ul class="title-list">
+                    <li class="active">校友留言</li>
+                </ul>
+            </div>
+            <div class="msg-content">
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div>
+<footer></footer>
+<script src="js/goodsDetail.js"></script>
+
+<!--商品信息模板-->
+<script type="text/x-handlebars-template" id="goods-detail-template">
+
+    <div class="goods-img">
+        <div class="image-big-box">
+            <img src="images/goodsImages/{{firstImage}}" class="image-big" title="点击查看大图">
+        </div>
+        <div class="images-small-box">
+            {{#each images}}
+            <img src="images/goodsImages/{{name}}" class="images-small">
+            {{/each}}
+        </div>
+        <div class="image-canvas-box">
+            <canvas id="image_canvas" class="image-canvas"></canvas>
+        </div>
+    </div>
+
+    <!--信息-->
+    <div class="goods-info">
+        <div class="goods-description">
+            <div class="goods-name">{{goods.goodsName}}</div>
+            <div class="goods-time">发布时间：{{goods.publishTime}}</div>
+        </div>
+        <div class="goods-sell-info">
+            <div class="detail-price">
+                <label>校园价<i></i></label><span>：</span>
+                <span class="sell-price">&yen;{{goods.schoolPrice}}</span>
+                <span class="new-price">[全新价：<span class="line-through">&yen;{{goods.originPrice}}</span>]</span>
+            </div>
+            <div class="sale">
+                <label>促销信息<i></i></label><span>：</span>
+                <span>{{goods.sell}}</span>
+            </div>
+        </div>
+        <div class="goods-campus">
+            <div class="campus-info">
+                <label>所属校区<i></i></label><span>：</span>
+                <span>{{goods.user.school}}</span>
+                <span>&nbsp;|&nbsp;</span>
+                <span>货到付款</span>
+            </div>
+            <div class="service">
+                <label>服务<i></i></label><span>：</span>
+                <span>买卖双方自主交易</span>
+                <span class="bold">校园客不承担责任</span>
+            </div>
+        </div>
+        <div class="remarks">
+            <label>更多信息<i></i></label><span>：</span>
+            <span>{{goods.remark}}</span>
+        </div>
+        <div class="cart">
+            <a href="javascript:void(0)" class="btn add-btn" id="add-to-cart">加入意愿单</a>
+            <!--<div id="cart_move" style="width: 20px; height: 20px; background: #000;"></div>-->
+        </div>
+        <div class="attention">
+            <label>温馨提示<i></i></label><span>：</span>
+            <div class="attention-cont">
+                <p>1.该商品信息的真实性校园客平台不予保证</p>
+                <p>2.双方交易产生的其他事项，与校园客平台无关</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!--发布者相关信息-->
+    <div class="belong-to">
+        <div class="user-face">
+            {{#if goods.user.header}}
+            <img src="images/headerImages/{{goods.user.header}}"  class="user-face-img">
+            {{else}}
+            <img src="images/headerImages/none_head.gif"  class="user-face-img">
+            {{/if}}
+        </div>
+        <div class="user-name">
+            <p class="userName">{{goods.user.userName}}</p>
+            <a href="personal.html?id={{goods.user.id}}" target="_blank" class="btn to-user-btn"><img src="images/checkUser.png">查看主页</a>
+            <a href="javascript:;" class="btn sendMessage-btn" data-value="{{goods.id}}"><img src="images/edit.png">我要留言</a>
+        </div>
+        <div class="user-goods-list">
+            <p><span>Ta</span>还在售：</p>
+            <ul>
+                {{#each list}}
+                <li><a href="goodsDetail.html?goodsId={{id}}&type=ON">{{goodsName}}</a> </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</script>
+
+<!--留言列表-->
+<script type="text/x-handlebars-template" id="msg-list-template">
+<div class="item-msg-in">
+    {{#each msgList}}
+    <div class="item-msg clear">
+        <div class="item-user">
+            {{#if user.header}}
+            <img src="images/headerImages/{{user.header}}" title="{{user.userName}}" class="item-head">
+            {{else}}
+            <img src="images/headerImages/none_head.gif" title="暂无头像" class="item-head">
+            {{/if}}
+            <a href="personal.html?id={{user.id}}" target="_blank" title="{{user.userName}}" class="item-user-link">{{user.userName}}</a>
+        </div>
+        <div class="item-content">
+            <div class="item-time">发表于：{{msgTime}}</div>
+            <div class="item-text">
+                <p>{{msg}}</p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+</script>
+
+
+<!--发表留言框-->
+<script type="text/x-handlebars-template" id="publish-msg-template">
+    <div class="publish-msg">
+        <div class="publish-title">
+            <p>{{goodsName}}</p>
+        </div>
+        <div class="msg-content-box">
+            <textarea id="msg" name="msg" placeholder="发表对该商品的看法或留下你的足迹..."></textarea>
+        </div>
+        <div class="warnings">
+            <p><i class="warning"></i>公开发表的言论由用户自己负责</p>
+        </div>
+    </div>
+</script>
+
+
+<!--查看商品组图之大图预览模式-->
+<script type="text/x-handlebars-template" id="show-bigImages-template">
+    <div class="show_bigImages_bg">
+        <a href="javascript:void(0);" id="closeShow">×</a>
+        <div class="show_bigImages">
+            <div class="show_title">
+                <div class="txt"><h1>{{goods.goodsName}} (<em id="currentInd">1</em> / {{imagesLength}} )</h1></div>
+            </div>
+            <div class="images_box">
+                <img src="images/goodsImages/{{firstImage}}" id="image_Preview">
+                <div class="img_prev"></div>
+                <div class="img_next"></div>
+            </div>
+            <div class="all_images clear">
+                <ul class="images_list">
+                    {{#each images}}
+                    <li><img src="images/goodsImages/{{name}}" class="images_small"></li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+
+<script>
+var $script = document.createElement('script')
+var search = searchString('goodsId');
+if(search == undefined){
+    window.location.href = "index.html";
+}
+var src;
+window.user = getCurrentUser();
+if(window.user != undefined){
+     src = "http://meet.xpro.im/v2/api/xmeet.api.js?xnest=comschoolke"+ search.goodsId +
+            "&xnest_name=校园客闲置商品讨论区&nickname=" + window.user.userName;
+}else{
+     src = "http://meet.xpro.im/v2/api/xmeet.api.js?xnest=comschoolke"+ search.goodsId +
+            "&xnest_name=校园客闲置商品讨论区";
+}
+
+$($script).attr('src',src);
+$('body').append($($script))
+
+</script>
+</body>
+</html>

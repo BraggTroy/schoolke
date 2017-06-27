@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>校园客</title>
+
+    <link rel="stylesheet" href="css/common/layout.css">
+    <link rel="stylesheet" href="css/common/schoolke-main.css">
+    <link rel="stylesheet" href="css/search.css">
+
+    <script src="js/common/js/ui.js"></script>
+</head>
+<body>
+<header></header>
+<div id="main">
+    <div class="nav-box"></div>
+    <div class="container">
+    <div class="search-main ke-width clear">
+        <div class="selected">
+            <!--商品精选-->
+        </div>
+        <div class="search-main-inner">
+            <div class="top-page">
+                <div class="top-page-num">
+                    <span class="current-page-num">1</span>/<span class="all-page-num">12</span>
+                </div>
+                <div class="top-opt">
+                    <span class="top-last">&lt;</span><span class="top-next">&gt;</span>
+                </div>
+                <div class="search-num">共256件商品</div>
+            </div>
+            <!--排序-->
+            <div class="sort-box">
+                <div class="sort-inner">
+                    <span class="sort-global active">综合&nbsp;&darr;</span>
+                    <span class="sort-hot">人气&nbsp;&darr;</span>
+                    <span class="sort-price-down">价格&nbsp;&darr;</span>
+                    <span class="sort-price-up">价格&nbsp;&uarr;</span>
+                </div>
+                <div class="search-gif"><img src="images/search-logo-text.png"></div>
+            </div>
+            <!--最终搜索结果显示-->
+            <div id="search-result">
+            </div>
+        </div>
+    </div>
+    <!--分页-->
+    <div class="page-box"></div>
+
+    <div class="search-again ke-width">
+        <div class="may-search-words">
+            <span>您是不是要找：</span>
+            <div class="search-again-words">
+                <span>手机</span>
+                <span>手机2</span>
+                <span>手机3</span>
+                <span>手机4</span>
+                <span>手机5</span>
+                <span>手机6</span>
+                <span>手机</span>
+            </div>
+        </div>
+        <div class="search-again-inner">
+            <span>重新搜索：</span>
+            <input type="text" value="" class="search-again-input">
+            <a href="javascript:void(0)" class="btn search-again-btn">搜索</a>
+        </div>
+    </div>
+
+    </div>
+</div>
+<footer></footer>
+<!--精选-->
+<script type="text/x-handlebars-template" id="selected-template">
+    <div class="sel-title">商品精选 <span class="type">广告</span></div>
+    <div class="sel-box">
+        <div><img class="sel-box-img" src="#" alt="#"></div>
+        <div><span class="sell-price">￥23.00</span></div>
+        <div><span class="scan-name">商品名称</span></div>
+    </div>
+</script>
+<script type="text/x-handlebars-template" id="search-goods-template">
+    {{#each search}}
+    <div class="goods-box">
+        <div class="img-box">
+            <a href="goodsDetail.html?goodsId={{id}}&type=ON" target="_blank" title="{{goodsName}}">
+            <img src="images/goodsImages/{{imageName}}">
+            </a>
+        </div>
+        <div class="scan-price">
+            <label>出手价：</label><span class="sell-price">&yen;{{schoolPrice}}</span>
+        </div>
+        <div class="scan-name">
+            <a href="goodsDetail.html?goodsId={{id}}&type=ON" target="_blank" title="{{goodsName}}">{{goodsName}}</a>
+        </div>
+        <div class="belong-to">
+            <a href="personal.html?id={{user.id}}" class="user-name">{{user.userName}}</a>
+            <a class="user-level"></a>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script src="js/search.js"></script>
+</body>
+</html>

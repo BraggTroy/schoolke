@@ -1,0 +1,44 @@
+/****/
+.nav-box{
+    border-bottom: 1px solid #4155e1;
+}
+.nav-allbtn{
+    cursor: pointer;
+}
+.nav-allbtn:hover .main-nav-list{
+    display: block;
+}
+.nav-allbtn:hover .arrow{
+    transform: rotate(-180deg);
+    margin-top: 20px;
+}
+
+/**********/
+.notice-box{
+    margin:10px 0 10px 200px;
+    border: 1px solid #ebebeb;
+    padding: 0 30px 30px;
+}
+.notice-title .title{
+    line-height: 60px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #454545;
+    text-align: center;
+    border-bottom: 1px solid #ebebeb;
+}
+.notice-title .time{
+    text-align: center;
+    color: #666666;
+    font-size: 14px;
+    padding: 8px 0;
+}
+.text-content{
+    padding: 0 5px;
+}
+.text-content p{
+    line-height: 30px;
+    color: #454545;
+    margin-top: 12px;
+}

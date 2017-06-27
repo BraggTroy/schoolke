@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+
+
+    <link rel="stylesheet" href="css/common/schoolke-main.css">
+    <link rel="stylesheet" href="css/common/layout.css">
+    <link rel="stylesheet" href="css/personal.css">
+
+
+    <script src="js/common/js/ui.js"></script>
+</head>
+<body>
+<header></header>
+<div id="main">
+    <div class="container clear">
+        <div class="personal ke-width">
+            <div class="personal-top clear">
+                <div class="top-logo">
+                    <a href="index.html" target="_self">
+                        <img src="images/logo.png" alt="校园客">
+                    </a>
+                </div>
+                <div class="top-title">
+                    <span class="p_">个人</span>资料
+                    <span class="top-notice">
+                    校园客-专注解决大学生闲置物品
+                    </span>
+                </div>
+            </div>
+            <div class="personal-info clear">
+                <div class="edit-btn-box">
+                    <div class="edit-btn"></div>
+                    <div class="save-btn"></div>
+                </div>
+                <form id="userHeader" enctype="multipart/form-data" method="post">
+                    <div class="info-table-box"></div>
+                    <div class="personal-face"></div>
+                </form>
+            </div>
+
+            <!--已发布的商品-->
+            <div class="person-goods-box">
+                <div class="title-box">
+                    <div class="current-goods active">
+                        <span class="user-select">正在销售</span>
+                    </div>
+                    <div class="done-goods">
+                        <span class="user-select">已下架</span>
+                    </div>
+                </div>
+                <div class="goods-list-box"></div>
+                <div class="goods-list-opt clear">
+                    <div class="opt">
+                    </div>
+                    <div class="page-box">
+                    </div>
+                </div>
+            </div>
+
+            <!--ad-->
+            <div class="p-ad">
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<footer></footer>
+<!--个人基本信息-->
+<script type="text/x-handlebars-template" id="info-table-template">
+    <input type="text" name="userId" value="{{id}}" style="display: none;">
+    <table class="info-table">
+        <tr>
+            <td>会员昵称：</td>
+            <td>
+                <input type="text" name="userName" disabled id="userName" value="{{userName}}">
+            </td>
+        </tr>
+        <tr>
+            <td>个性签名：</td>
+            <td>
+                <input type="text" name="remark" disabled id="remark" value="{{personality}}">
+            </td>
+        </tr>
+        <tr>
+            <td>所属校区：</td>
+            <td>
+                <input type="text" name="school" disabled id="school" value="{{school}}">
+            </td>
+        </tr>
+        <tr>
+            <td>联系方式：</td>
+            <td>
+                <input type="text" name="phone" disabled id="phone" value="{{contact}}">
+            </td>
+        </tr>
+        <tr class="empty-tr">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>已发商品数：</td>
+            <td>{{goodsNum}}件</td>
+        </tr>
+        <tr>
+            <td>注册日期：</td>
+            <td>{{registrationDate}}</td>
+        </tr>
+    </table>
+</script>
+<script type="text/x-handlebars-template" id="face-info-template">
+    <div class="face-inner">
+        <div class="img-name">
+            <div class="img-box">
+                <img src="images/headerImages/{{header}}" class="user-face-img" alt="{{userName}}">
+                <input type="file" accept="image/*" name="head" id="face-input">
+            </div>
+            <p>{{userName}}</p>
+        </div>
+        <div class="info-opt">
+            <a href="publishGoods.html?id=&type=NEW" target="_blank" class="btn publish-goods">发布商品</a>
+            <a href="message.html" target="_blank" class="btn my-notice">我的消息</a>
+        </div>
+    </div>
+</script>
+
+<!--在售商品信息-->
+<script type="text/x-handlebars-template" id="goods-list-template">
+    <table class="user-goods-list">
+        <thead>
+        <tr>
+            <th class="p-check"></th>
+            <th class="p-goodsName">商品名称</th>
+            <th class="p-price">校园价</th>
+            <th class="p-newPrice">全新价</th>
+            <th class="p-saleInfo">促销信息</th>
+            <th class="p-more">更多信息</th>
+            <th class="p-opt">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each list}}
+        <tr>
+            <td><input type="checkbox" class="checkbox-items" data-value="{{id}}"></td>
+            <td>{{goodsName}}</td>
+            <td class="p-price">&yen;{{schoolPrice}}</td>
+            <td class="p-newPrice">&yen;{{originPrice}}</td>
+            <td>{{sell}}</td>
+            <td>{{remark}}</td>
+            <td class="p-opt">
+                <a href="goodsDetail.html?goodsId={{id}}&&type=ON" target="_blank">查看</a>
+                <a href="publishGoods.html?id={{id}}&type=UPDATE" target="_blank" class="edit">编辑</a>
+                <a href="javascript:void (0);" data-value="{{id}}" class="done">下架</a>
+            </td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</script>
+
+<!--已下架商品信息-->
+<script type="text/x-handlebars-template" id="down-list-template">
+    <table class="user-goods-list">
+        <thead>
+        <tr>
+            <th class="p-goodsName">商品名称</th>
+            <th class="p-price">校园价</th>
+            <th class="p-newPrice">全新价</th>
+            <th class="p-saleInfo">促销信息</th>
+            <th class="p-more">更多信息</th>
+            <th class="p-opt">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{goodsName}}</td>
+            <td class="p-price">&yen;{{schoolPrice}}</td>
+            <td class="p-newPrice">&yen;{{originPrice}}</td>
+            <td>{{sell}}</td>
+            <td>{{remark}}</td>
+            <td class="p-opt">
+                <a href="goodsDetail.html?goodsId={{id}}&type=DOWN" target="_blank">查看</a>
+                <a href="javascript:void (0);" data-value="{{id}}" class="on">重新上架</a>
+            </td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</script>
+<script src="js/personal.js"></script>
+</body>
+</html>

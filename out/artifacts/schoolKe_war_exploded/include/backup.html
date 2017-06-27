@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #flash,ul,li{margin:0;padding:0;list-style:none;}
+        a{text-decoration: none;color: #fff;}
+        #flash{width: 730px;height: 454px;margin: 100px auto;position: relative;cursor: pointer;}
+        #pic li{position: absolute;top: 0;left: 0;z-index: 1;display: none;}
+        #num{position: absolute;left: 40%;bottom: 10px;z-index: 2;cursor:default;margin:0;padding:0;list-style:none;}
+        #num li{float: left;width: 20px;height: 20px;border-radius: 50%;background: #666;margin: 3px;line-height: 20px;text-align: center;color: #fff;cursor: pointer;}
+        #num li.active{background: #f00;}
+        .arrow{height: 60px;width: 30px;line-height: 60px;text-align: center;display: block;position: absolute;top:45%;background-color: rgba(0,0,0,0.3);z-index: 3;display: none;}
+        .arrow:hover{background: rgba(0,0,0,0.7);}
+        #flash:hover .arrow{display: block;}
+        #left{left: 2%;}
+        #right{right: 2%;}
+    </style>
+    <script type="text/javascript">
+        function $(id) {
+            return typeof id==='string'?document.getElementById(id):id;
+        }
+        window.onload=function(){
+            var index=0;
+            var timer=null;
+            var pic=$("pic").getElementsByTagName("li");
+            var num=$("num").getElementsByTagName("li");
+            var flash=$("flash");
+            var left=$("left");
+            var right=$("right");
+            //单击左箭头
+            left.onclick=function(){
+                index--;
+                if (index<0) {
+                    index=num.length-1
+                };
+                changeOption(index);
+            }
+            //单击右箭头
+            right.onclick=function(){
+                index++;
+                if (index>=num.length) {
+                    index=0
+                };
+                changeOption(index);
+            }
+            //鼠标划在窗口上面，停止计时器
+            flash.onmouseover=function(){
+                clearInterval(timer);
+            }
+            //鼠标离开窗口，开启计时器
+            flash.onmouseout=function(){
+                timer=setInterval(run,2000)
+            }
+            //鼠标划在页签上面，停止计时器，手动切换
+            for(var i=0;i<num.length;i++){
+                num[i].id=i;
+                num[i].onmouseover=function(){
+                    clearInterval(timer);
+                    changeOption(this.id);
+                }
+            }
+            //定义计时器
+            timer=setInterval(run,2000)
+            //封装函数run
+            function run(){
+                index++;
+                if (index>=num.length) {
+                    index=0
+                };
+                changeOption(index);
+            }
+            //封装函数changeOption
+            function changeOption(curindex){
+                console.log(index)
+                for(var j=0;j<num.length;j++){
+                    pic[j].style.display="none";
+                    num[j].className="";
+                }
+                pic[curindex].style.display="block";
+                num[curindex].className="active";
+                index=curindex;
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="loading">
+    <div class="t-circle half-circle"><span class="eye"></span></div>
+    <div class="b-circle half-circle"></div>
+    <div class="s-circle s1"></div>
+    <div class="s-circle s2"></div>
+    <div class="s-circle s3"></div>
+    <div class="s-circle s4"></div>
+</div>
+<div id="flash">
+    <ul id="pic">
+        <li style="display:block">
+            <img src="http://img13.360buyimg.com/da/jfs/t2242/262/578407619/87636/4ffe0c5/56187ed2Nfed9a5b3.jpg" alt="">
+        </li>
+        <li>
+            <img src="http://img13.360buyimg.com/da/jfs/t2143/111/577347825/96150/e27180bd/561889b3N42ee62b5.jpg" alt="">
+        </li>
+        <li>
+            <img src="http://img20.360buyimg.com/da/jfs/t1825/234/1750370913/97529/b9229832/560b5ad3N054605f7.jpg" alt="">
+        </li>
+        <li>
+            <img src="http://img10.360buyimg.com/da/jfs/t2026/215/573306345/95654/a0211937/5618a735N1b3d8423.jpg" alt="">
+        </li>
+        <li>
+            <img src="http://img20.360buyimg.com/da/jfs/t2065/362/579832759/78899/6f349917/5618c680N3752bacc.jpg" alt="">
+        </li>
+        <li>
+            <img src="http://img10.360buyimg.com/da/jfs/t2023/45/384256123/101565/9b6e5daf/5604bdceN8c7d2ccf.jpg" alt="">
+        </li>
+    </ul>
+    <ol id="num">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ol>
+    <a href="javascript:void(0);" id="left" class="arrow">&lt;</a>
+    <a href="javascript:void(0);" id="right" class="arrow">&gt;</a>
+
+</div>
+
+
+
+<style>
+    .loading{
+        position: relative;
+        width: 200px;
+        height: 80px;
+    }
+    .half-circle{
+        width: 80px;
+        height: 40px;
+        background: #cccccc;
+    }
+    .t-circle{
+        border-top-right-radius: 40px;
+        border-top-left-radius: 40px;
+        animation: rotate_pacman_half_up 0.5s 0s infinite;
+    }
+    .b-circle{
+        border-bottom-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        animation: rotate_pacman_half_down 0.5s 0s infinite;
+    }
+    .eye{
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: #ffffff;
+        border-radius: 50%;
+        float: right;
+        margin: 15px;
+    }
+    @keyframes rotate_pacman_half_up{
+        25%{
+            transform: rotate(-10deg);
+            -ms-transform:rotate(-10deg);	/* IE 9 */
+            -moz-transform:rotate(-10deg); 	/* Firefox */
+            -webkit-transform:rotate(-10deg); /* Safari 和 Chrome */
+            -o-transform:rotate(-10deg);
+            transform-origin: 50% 50%;
+        }
+        50%{
+            transform: rotate(-20deg);
+            -ms-transform:rotate(-20deg);	/* IE 9 */
+            -moz-transform:rotate(-20deg); 	/* Firefox */
+            -webkit-transform:rotate(-20deg); /* Safari 和 Chrome */
+            -o-transform:rotate(-20deg);
+            transform-origin: 50% 50%;
+        }
+        75%{
+            transform: rotate(-30deg);
+            -ms-transform:rotate(-30deg);	/* IE 9 */
+            -moz-transform:rotate(-30deg); 	/* Firefox */
+            -webkit-transform:rotate(-30deg); /* Safari 和 Chrome */
+            -o-transform:rotate(-30deg);
+            transform-origin: 50% 50%;
+        }
+    }
+
+    @keyframes rotate_pacman_half_down{
+        25%{
+            transform: rotate(10deg);
+            -ms-transform:rotate(10deg);	/* IE 9 */
+            -moz-transform:rotate(10deg); 	/* Firefox */
+            -webkit-transform:rotate(10deg); /* Safari 和 Chrome */
+            -o-transform:rotate(10deg);
+            transform-origin: 50% 50%;
+
+        }
+        50%{
+            transform: rotate(20deg);
+            -ms-transform:rotate(20deg);	/* IE 9 */
+            -moz-transform:rotate(20deg); 	/* Firefox */
+            -webkit-transform:rotate(20deg); /* Safari 和 Chrome */
+            -o-transform:rotate(20deg);
+            transform-origin: 50% 50%;
+        }
+        75%{
+            transform: rotate(30deg);
+            -ms-transform:rotate(30deg);	/* IE 9 */
+            -moz-transform:rotate(30deg); 	/* Firefox */
+            -webkit-transform:rotate(30deg); /* Safari 和 Chrome */
+            -o-transform:rotate(30deg);
+            transform-origin: 50% 50%;
+        }
+    }
+
+    .s-circle{
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        background: #cccccc;
+        border-radius: 50%;
+        position: absolute;
+        right: 0;
+        top: 30px;
+    }
+    .s1{
+        right: 0px;
+        animation: right1 0.5s infinite;
+    }
+    .s2{
+        right: 40px;
+        animation: right2 0.5s infinite;
+    }
+    .s3{
+        right: 80px;
+        animation: right3 0.5s infinite;
+    }
+    .s4{
+        right: 120px;
+        animation: right4 0.5s  infinite;
+    }
+
+    @keyframes right1 {
+        from{ right: 0; }
+        to{ right: 40px; }
+    }
+    @keyframes right2 {
+        from{ right: 40px; }
+        to{ right: 80px; }
+    }
+    @keyframes right3 {
+        from{ right: 80px; }
+        to{ right: 120px; }
+    }
+    @keyframes right4 {
+        from{ right: 120px; }
+        to{ right: 160px; }
+    }
+
+</style>
+</body>
+</html>

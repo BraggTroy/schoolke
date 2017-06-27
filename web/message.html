@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>校园客 - 消息中心</title>
+
+    <link rel="stylesheet" href="css/common/schoolke-main.css">
+    <link rel="stylesheet" href="css/common/layout.css">
+    <link rel="stylesheet" href="css/message.css">
+
+    <script src="js/common/js/ui.js"></script>
+</head>
+<body>
+<header></header>
+<div id="main">
+    <div class="nav-box"></div>
+    <div class="container">
+        <div class="message-box ke-width">
+            <div class="message-box clear">
+                <div class="left">
+                    <div class="left-inner">
+                        <div class="msg-item myGoods-msg active">
+                            <span></span>
+                            <p>关于我的留言</p>
+                        </div>
+                        <div class="msg-item my-msg">
+                            <span></span>
+                            <p>已发表的评论</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="msg-title">
+                        <span class="msg-title-text">关于我的留言</span>
+                        <img src="images/loading2.gif" id="load_gif">
+                    </div>
+                    <div class="msg-main">
+                        <!--留言框-->
+                        <div class="msg-cont">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<footer></footer>
+<!--关于留言-->
+<script type="text/x-handlebars-template" id="aboutMsg-template">
+    <table id="myGoods_msg_table" class="msg-table">
+        {{#each msgList}}
+        <tr>
+            <td><a href="personal.html?id={{user.id}}" class="message_user" target="_blank">{{user.userName}}</a></td>
+            <td class="tips-parent">
+                <span>{{msg}}</span>
+                <div class="tips">
+                    <div class="tip-inner">
+                        <img src="images/search-logo-text.png">
+                        <a href="goodsDetail.html?goodsId={{goods.id}}" target="_blank">{{goods.goodsName}}</a>
+                        <span class="triangle"></span>
+                    </div>
+                </div>
+            </td>
+            <td>{{msgTime}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</script>
+
+<!--已发留言-->
+<script type="text/x-handlebars-template" id="myMsg-template">
+    <table id="my_msg_table" class="msg-table">
+        {{#each msgList}}
+        <tr>
+            <td class="tips-parent">
+                <span>{{msg}}</span>
+                <div class="tips">
+                    <div class="tip-inner">
+                        <img src="images/search-logo-text.png">
+                        <a href="goodsDetail.html?goodsId={{goods.id}}" target="_blank">{{goods.goodsName}}</a>
+                        <span class="triangle"></span>
+                    </div>
+                </div>
+            </td>
+            <td>{{msgTime}}</td>
+            <td><a href="javascript:;" class="del_my_msg" data-value="{{id}}" data-text="{{msg}}">删除</a></td>
+        </tr>
+        {{/each}}
+    </table>
+</script>
+
+<script src="js/message.js"></script>
+</body>
+</html>

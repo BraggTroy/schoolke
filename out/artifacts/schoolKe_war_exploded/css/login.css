@@ -1,0 +1,175 @@
+
+.login-title{
+    width: 1024px;
+    margin: 10px auto;
+}
+.login-name{
+    font-size: 28px;
+    color: #666666;
+    /*line-height: 48px;*/
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin-left: 20px;
+    border-left: 1px solid #cccccc;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+.container{
+    background: #EBE4DA;
+}
+.cont{
+    width: 1280px;
+    margin: auto;
+    position: relative;
+}
+.bg-img{
+    width: 990px;
+    height: 475px;
+    margin: 0 auto;
+    background: url("../images/login-bg1.jpg");
+    position: relative;
+}
+
+
+/**********************/
+.login-box{
+    position: absolute;
+    top:50px;
+    right: -10px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+}
+.login-tab{
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    border-bottom: 1px solid #f1f1f1;
+    /*line-height: 50px;*/
+    font: 700 20px/50px "Microsoft YaHei";
+}
+.login-tab a{
+    color: #666666;
+}
+.login-tab a.active{
+    color: #f10215;
+}
+.userName-login{
+    padding: 0 12px 8px 12px;
+}
+i{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../images/pwd-icons-new.png") no-repeat;
+    vertical-align: text-bottom;
+}
+.msg-wrap{
+    visibility: hidden;
+    font-size: 12px;
+    color: #ff0000;
+    background: #f4f7f9;
+    border: 1px solid #f40;
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 2px 0 2px 5px;
+}
+.msg-wrap i{
+    background-position: -104px -49px;
+}
+
+.item{
+    margin: 5px 5px 15px 5px;
+}
+.item label{
+    display: inline-block;
+    float: left;
+    width: 38px;
+    height: 38px;
+    background-image: url("../images/pwd-icons-new.png");
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    border-right: none;
+}
+.name-label{
+    background-position: 0 0;
+}
+.password-label{
+    background-position: -48px -0px;
+}
+.item-input{
+    width: 250px;
+    height: 38px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+    padding-left: 8px;
+    font-size: 14px;
+    color: #333333;
+}
+.login-opt{
+    color: #666;
+    font-size: 14px;
+    margin: 0 5px 15px 5px;
+}
+.login-remember{
+    vertical-align: text-bottom;
+}
+.auto-login{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.forget-password{
+    color: #666;
+
+    float: right;
+}
+.forget-password:hover{
+    text-decoration: underline;
+    color: #f10215;
+}
+
+.login-btn{
+    display: block;
+    width: 100%;
+    background: #f10215;
+    color: #ffffff;
+    text-align: center;
+    padding: 8px 0;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+.register{
+    text-align: right;
+}
+.register i{
+    background-position: -104px -75px;
+    vertical-align: text-bottom;
+    margin-right: 2px;
+}
+.register  a{
+    color: #f10215;
+    font-size: 15px;
+}
+.register a:hover{
+    text-decoration: underline;
+}
+.foot{
+    text-align: center;
+    font: 12px/50px "Microsoft YaHei" ;
+    color: #999999;
+}
+.foot a{
+    font: 12px/30px "Microsoft YaHei" ;
+    color: #999999;
+}
+.foot a:hover{
+    text-decoration: underline;
+    color: #4155E1;
+}
+.top-right{
+    float: right;
+    margin-top: 50px;
+}

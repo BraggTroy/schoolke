@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <title>校园客 - 轻松解决闲置商品</title>
+        <meta name="keywords" content="校园客,校园闲客,二手商品,二手交易平台,校园二手商品,校园二手货,二手交易,学生交易,学校二手商品,闲鱼,大学生在线交易,学校">
+
+        <link rel="stylesheet" href="css/common/schoolke-main.css">
+        <link rel="stylesheet" href="css/common/layout.css">
+        <link rel="stylesheet" href="css/index.css">
+
+        <script src="js/common/js/ui.js"></script>
+
+    </head>
+<body>
+<header></header>
+<div class="clear"></div>
+<div id="main">
+<div id="main-inner">
+    <div class="nav-box ke-width"></div>
+    <script>
+        getHeader();
+        getNav();
+    </script>
+    <div class="clear"></div>
+    <!--主体容器-->
+    <div class="container">
+        <div class="lunbo-login-box ke-width clear">
+            <div class="lunbo-box">
+                <div id="flash">
+                    <ul id="pic">
+                        <li style="display:block">
+                            <img src="images/carousel/590c47f8Na2526863.jpg" alt="">
+                        </li>
+                        <li>
+                            <a href="goodsDetail.html?goodsId=49" target="_blank">
+                            <img src="images/carousel/590b126bNed2f4061.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <img src="images/carousel/590b12acN2c2d386d.jpg" alt="">
+                        </li>
+                        <li>
+                            <img src="images/carousel/59030fceN8849a4c3.jpg" alt="">
+                        </li>
+                        <li>
+                            <img src="images/carousel/5618a735N1b3d8423.jpg" alt="">
+                        </li>
+                    </ul>
+                    <ol id="num">
+                        <li class="active">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ol>
+                    <a href="javascript:;" id="left" class="arrow">&lt;</a>
+                    <a href="javascript:;" id="right" class="arrow">&gt;</a>
+                </div>
+
+            </div>
+            <div class="login-box">
+                <div class="login-in">
+                    <div class="face">
+                        <img src="images/headerImages/none_head.gif" title="">
+                        <p class="face-welcome">Hi，欢迎来到校园客！</p>
+                        <div class="user-opt">
+                            <a href="login.html" target="_blank" class="btn">登录</a>
+                            <a href="register.html" target="_blank" class="btn">注册</a>
+                        </div>
+                    </div>
+                    <div class="notice">
+                        <div class="notice-t"><span>公告</span></div>
+                        <div class="notice-l">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--热门单品-->
+        <div class="hot-goods">
+        <div class="ke-width">
+            <span class="banner-title">最新发布</span>
+            <div class="goods-list clear">
+            </div>
+        </div>
+        </div>
+
+        <!--推荐-->
+        <div class="recommend">
+        <div class="ke-width">
+            <span class="banner-title">推荐</span>
+            <div class="recommend-box ke-width clear">
+            </div>
+        </div>
+        </div>
+
+        <!--网站指南-->
+        <div class="index-info clear">
+        <div class="ke-width">
+            <span class="banner-title">校园客指南</span>
+            <div class="info-left">
+                <img src="images/bdyy.gif" align="right">
+            </div>
+            <div class="info-right">
+                <div class="process">
+                    <div class="process-title">教你怎么卖</div>
+                </div>
+                <div class="process">
+                    <div class="process-title">教你怎么买</div>
+                </div>
+                <div class="process-main" style="text-align: center">
+                    <!--可以制作过程图片-->
+                    <!--可以写一个页面，然后目录导航-->
+                    <!--<img src="images/buy_sell.png" alt="">-->
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div>
+</div>
+<footer></footer>
+
+<!--人气商品预览-->
+<script type="text/x-handlebars-template" id="goods-scan-template">
+    {{#each list}}
+    <div class="goods-scan">
+        <div class="scan-img">
+            <a href="goodsDetail.html?goodsId={{id}}&type=ON" target="_blank">
+               <img src="images/goodsImages/{{imageName}}">
+            </a>
+        </div>
+        <div class="scan-price">
+            <label>出手价：</label><span class="sell-price">&yen;{{schoolPrice}}</span>
+            <span class="line-through">全新价：&yen;{{originPrice}}</span>
+        </div><!--
+        --><div class="scan-name">
+        <a href="goodsDetail.html?goodsId={{id}}&type=ON" title="{{goodsName}}" target="_blank">{{goodsName}}</a>
+    </div>
+    </div>
+    {{/each}}
+</script>
+
+<!--推荐商品模板-->
+<script type="text/x-handlebars-template" id="recommend-template">
+    {{#each list}}
+<div class="rd-item">
+    <div class="rd-item-inner">
+        <a href="goodsDetail.html?goodsId={{info.goods.id}}&type=ON" target="_blank" class="rd-title-a">
+            <p class="rd-title">{{info.recommendTitle}}</p>
+        </a>
+        <p class="rd-goodsName">{{info.goods.goodsName}}</p>
+        <div class="rd-images">
+            {{#each images}}
+            <div class="rd-img-item" style="background-image: url('images/goodsImages/{{name}}')"></div>
+            {{/each}}
+        </div>
+        <a href="personal.html?id={{info.goods.user.id}}" target="_blank" class="rd-title-a">
+            <span class="rd-userName">{{info.goods.user.userName}}</span>
+        </a>
+    </div>
+</div>
+    {{/each}}
+</script>
+
+<!--用户个人信息-->
+<script type="text/x-handlebars-template" id="user-template">
+    <a href="personal.html?id={{id}}"><img src="images/headerImages/{{header}}">
+    <p class="face-welcome" style="color:#f10215;">Hi，欢迎{{userName}}！</p></a>
+    <div class="user-opt">
+        &nbsp;
+    </div>
+</script>
+
+
+<script src="js/index.js"></script>
+</body>
+</html>

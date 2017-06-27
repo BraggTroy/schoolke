@@ -1,0 +1,539 @@
+
+/**
+  * 布局样式 reset header main-box footer
+**/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+    font: 100% "Microsoft YaHei"
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a{
+    text-decoration: none;
+}
+a img{
+    border:none;
+}
+/*a:hover{color: #4169E1;}*/
+/*a:active{color: #ff4000;}*/
+/*a:link{color: #ff4400;}*/
+/*a:visited{color: #4169E1;}*/
+
+textarea{
+    resize: none;
+}
+/********************* RESET.CSS结束 ***********************/
+
+
+/*LAYOUT.CSS*/
+.clear{
+    clear: both;
+    overflow: hidden;
+}
+.ke-width{
+    width: 1190px;
+    margin: auto;
+}
+header{
+    height: 158px;
+}
+/*************** ke-header-top 顶部 ***************/
+.ke-header-top{
+    height: 32px;
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0px 1px 1px #ccc;
+    background-color: #f5f5f5;
+}
+.ke-ht-inner{
+    width: 1190px;
+    margin: auto;
+    font-size: 12px;
+    position: relative;
+}
+/*左侧*/
+.ke-userOpt,.ke-indexLink{
+    float: left;
+    line-height: 32px;
+}
+.ke-indexLink a{
+    margin-right: 15px;
+    color: #f10215;
+}
+.ke-login{
+    color: #f10215;
+    margin-left: 8px;
+}
+.ke-login:hover{ text-decoration: underline;}
+
+/*右侧*/
+.ke-headerMenu{
+    float: right;
+    line-height: 32px;
+}
+.per:hover .pc-nav-opt{
+    border: 1px solid #cccccc;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+.per:hover .exit-box{
+    display: block;
+}
+.exit-box{
+    display: none;
+    position: absolute;
+    text-align: center;
+    border: 1px solid #cccccc;
+    top: 32px;
+    width: 82px;
+    box-sizing: border-box;
+}
+.exit-box a{
+    display: block;
+    line-height: 32px;
+    background: #ffffff;
+}
+.exit-box a:hover{
+    background: #f0f0f0;
+}
+.per a:hover{
+    text-decoration: underline;
+    color: #f10215;
+}
+.pc-nav-opt{
+    padding: 0 10px;
+    border: 1px solid transparent;
+}
+.ke-hMenu,.pc-nav-opt{
+    float: right;
+    line-height: 32px;
+}
+.ke-hMenu a{color: #666666}
+/*网站导航*/
+.pc-nav-map{display: none;
+    position: absolute;
+    top: 32px;
+    right: 0px;
+    border: 1px solid #cccccc;
+    padding: 15px;
+    background-color: #ffffff;
+    z-index: 999;
+}
+.pc-nav-map dl{
+    display: inline-block;
+    white-space: nowrap;
+    float: left;
+    padding: 0 20px;
+    font-size: 16px;
+    border-left: 1px solid #f0f0f0;
+
+}
+.pc-nav-map dl:first-child{
+    border-left: none;
+}
+.pc-nav-map dl dt{
+    display: block;
+    color: #454545;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 50px;
+}
+.pc-nav-map dl dd{
+    border-right: 1px solid #f0f0f0;
+
+}
+.pc-nav-map dl dd ul{
+    float: left;
+}
+.pc-nav-map dl dd ul a{
+    margin: 0 25px 0 0;
+    line-height: 25px;
+    color: #666;
+    font-size: 12px;
+}
+.pc-nav-map dl dd ul a:hover{
+    text-decoration: underline;
+}
+/*网站导航：hover显示控制*/
+.pc-nav:hover .pc-nav-map{display: block;}
+.pc-nav:hover .pc-nav-opt{
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+}
+
+/*二维码*/
+.ke-hm-code{display: none;
+    position: absolute;
+    top: 32px;
+    right: 83px;
+    width: 100px;
+    border: 1px solid #cccccc;
+    padding: 15px;
+    background-color: #ffffff;
+    text-align: center;
+    z-index: 999;
+}
+.ke-hm-code img{
+    width: 80px; height: 80px;
+}
+.mob:hover .ke-hm-code{ display: block;}
+.mob:hover .pc-nav-opt{
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+}
+
+
+
+/*************** header 不包括菜单***************/
+.ke-header-main{ width: 100%;}
+.ke-hMain-in{
+    width: 1190px;
+    height: 100px;
+    margin: auto;
+    margin-top: 25px;
+}
+.logo-box{
+    float: left;
+}
+.logo{
+    float:left;
+    margin-right: 100px;
+    visibility: visible;
+}
+
+.ke-search-form{
+    float:left;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+.ke-form-left{
+    float: left;
+    border: 1px solid #4169E1;
+    min-width: 350px;
+    width: 450px;
+    height: 35px;
+}
+#ke-submit{
+    width: 80px;
+    height:37px;
+    background-color: #4169E1;
+    border:1px solid #4169e1;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#ke-submit:hover{ background: #4155e1; border:1px solid #4155e1;}
+#ke-search{
+    height: 33px;
+    border: none;
+    min-width: 300px;
+    width: 400px;
+    margin-left: 20px;
+    font: 14px Microsoft YaHei;
+    color: #666666;
+}
+
+.hot-words ul li{
+    float: left;
+    margin:6px 6px 6px 0;
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+}
+.hot-words ul li:hover{color: #f10215;}
+
+
+/*************************** 主体导航菜单 ***********************/
+.nav-box{
+    margin: 10px auto 0;
+    height: 40px;
+}
+.nav-allbtn{
+    float: left;
+    width: 200px;
+    height: 40px;
+    background: #4155E1;
+    color: #ffffff;
+
+}
+.nav-allbtn span{
+    line-height:40px;
+    margin: 0 8px;
+}
+.nav-list{
+    float: left;
+    margin-left: 56px;
+}
+.nav-list ul li{
+    float: left;
+    text-align: center;
+    line-height:40px;
+
+}
+.nav-list ul li a{
+    display: inline-block;
+    color: #454545;
+    font-family: "Microsoft YaHei";
+}
+.nav-list ul li a:hover{ color: #f10215;}
+.nav-list ul li a:after{
+    content: "|";
+    color: #f0f0f0;
+    font-size: 14px;
+    margin: 0 18px;
+}
+
+/************** main-nav-list 主要导航-纵向 ***************/
+
+.main-nav-list{
+    min-height: 300px;
+    background: #4169E1;
+    position: relative;
+    display: none;
+    z-index: 9999;
+}
+.main-nav-list .nav-ul{
+    clear: both; overflow: hidden;
+    background: #4169E1;
+}
+.main-nav-list .nav-ul li{
+    float: left;
+    /*font: 14px/40px Microsoft YaHei 黑体;*/
+    font:14px/40px Microsoft YaHei,sans-serif,arial;
+}
+.nav-ul li:first-child{ margin-left: 8px;}
+.main-nav-list .nav-ul li a{
+    color: #e0e0e0;
+}
+
+.main-nav-list .nav-ul li:after{
+    content: "/";
+    font-size: 13px;
+    margin: 0 3px;
+}
+.nav-ul li:last-child:after{ content: ""}
+.nav-ul li:nth-last-of-type(1):after{ content: "" }
+
+.arrow{
+    display: block;
+    width: 20px;
+    height: 20px;
+    float: right;
+}
+.arrow img{
+    margin-top: 10px;
+}
+
+/*右侧详细菜单列表*/
+.navList{ display: none;
+    width: 900px;
+    min-height: 300px;
+    height: auto;
+    border: 1px solid #4169E1;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 3px #4169E1;
+    position: absolute;
+    left: 200px;
+    top: 0px;
+    color: #999;
+    background-color: #ffffff;
+}
+/*详细菜单显示控制*/
+.nav-ul:hover .navList{  display: block;  }
+.nav-ul:hover{ background: #f1f1f1;}
+.nav-ul:hover li a{ color: #4169E1;}
+.nav-ul:hover li:after{ color: #4169E1;}
+.nav-ul:hover li a:hover{ color:#f10215;}
+
+
+/*右侧详单*/
+.navList-main{
+    width: 700px;
+    float: left;
+}
+.navList-line{
+    /*background-color: #f0f0f0;*/
+    margin:8px;
+    line-height: normal;
+}
+.navList-t{
+    color: #333333;
+    font-size: 15px;
+    padding: 0;
+    border-bottom: 1px solid #e0e0e0;
+    /*height: 30px;*/
+}
+.navList-t i{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    background-image: url("../../images/navList.png");
+
+}
+/*list-bg控制*/
+.gongxue{background-position: -60px 0;}
+.lixue{background-position: -90px 0;}
+.wenxue{background-position: -120px 0;}
+.zhexue{background-position: -150px 0;}
+.qitaxuexi{background-position: 0 -150px;}
+.shouji{background-position: -30px -30px;}
+.diannao{background-position: 0 -30px;}
+.shuma{background-position: -60px -30px;}
+.zhoubianpeijian{background-position: -60px -60px;}
+.zhinengshebei{background-position: -90px -60px;}
+.nanzhuang{background-position: -0 -90px;}
+.nvzhuang{background-position: -30px -90px;}
+.xiezi{background-position: -60px -90px;}
+.wazi{background-position: -120px -90px;}
+.zhuangshi{background-position: -150px -90px;}
+.meizhuang{background-position: -0 -60px;}
+.xihuyongping{background-position: -30px -60px;}
+.qitayongpin{background-position: -30px -120px;}
+.jiaju{background-position: 0 0;}
+.dianqi{background-position: -30px 0;}
+.jiayongqita{background-position: -90px -90px;}
+.gougou{background-position: -60px -150px;}
+.maomao{background-position: -90px -150px;}
+.xiaochong{background-position: -30px -150px;}
+.shuizu{background-position: -120px -150px;}
+
+.navList-l{
+    font-size: 12px;
+    line-height: 20px;
+}
+.navList-l a{
+    color: #666666;
+    margin: 0 5px;
+}
+.navList-l a:hover{
+    text-decoration: underline;
+    color: #f10215;
+}
+.navList-l a.red{
+    color: #f10215;
+}
+/*ad*/
+.navList-ad-right{
+    width: 190px;
+    height: auto;
+    float: right;
+}
+.navList-ad-right img{
+    width: 190px;
+    height: 190px;
+
+}
+.navList-ad-bottom{
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+.navList-ad-bottom img{
+    float: left;
+    box-sizing: border-box;
+    width: 449px;
+    min-height: 80px;
+    max-height: 120px;
+}
+.one-pic img{
+    height: auto;
+    max-height: 400px;
+}
+
+
+/********************* main 主体内容 *************************/
+
+#main{
+    width: 100%;
+    min-height: 500px;
+}
+
+
+/********************* footer 底部 *************************/
+footer{
+    width: 100%;
+    background: url("../../images/bg-footer.jpg");
+    color: #e0e0e0;
+}
+footer a{color: #e0e0e0;}
+footer a:hover{color: #a0a0a0;}
+.ft-top{
+    width: 100%;
+    min-width: 1190px;
+    margin: auto;
+    border-bottom: 1px solid #454545;
+    display: flex;
+}
+.ft-top-banner{
+    flex: 1;
+    float: left;
+    text-align: center;
+    padding: 15px 0;
+}
+.ft-main{
+    width: 1190px;
+    margin: auto;
+    padding: 15px 0 0 0;
+}
+.ft-cooperation .coop-link{
+    float: left;
+    margin:0 20px 20px 0;
+}
+.coop-link img{
+    max-width: 120px;
+    max-height: 120px;
+    min-height: 40px;
+    min-width: 80px;
+    border:1px solid #cccccc;
+    vertical-align: middle;
+}
+.ft-copyright{text-align: left;}
+.ft-copyright a{margin-right: 10px;}
+
+

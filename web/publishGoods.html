@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>校园客 - 发布我的闲置</title>
+
+    <link rel="stylesheet" href="css/common/schoolke-main.css">
+    <link rel="stylesheet" href="css/common/layout.css">
+    <link rel="stylesheet" href="css/publishGoods.css">
+
+
+    <script src="js/common/js/ui.js"></script>
+
+    <script>
+        $(function () {
+            //创建控件
+            var tree = $('#treeBox').navigationTree({
+                data: [
+                    { ID: 'publish-img', NodeName: '添加图片' },
+                    { ID: 'publish-name', NodeName: '添加商品名' },
+                    {
+                        ID: 'publish-price',
+                        NodeName: '添加商品价格'
+//                        Children: [{ ID: '3.1', NodeName: '标题3.1' }, { ID: '3.2', NodeName: '标题3.2' }]
+                    },
+                    { ID: 'publish-sell', NodeName: '添加促销信息' },
+                    { ID: 'publish-remark', NodeName: '添加备注' },
+                    { ID: 'publish-classify', NodeName: '添加分类'}
+                ]
+            });
+        });
+    </script>
+</head>
+<body>
+<header></header>
+<div id="main">
+    <div class="container">
+        <div class="top-box">
+        <div class="publish-top clear">
+            <div class="top-logo">
+                <a href="index.html" target="_self">
+                    <img src="images/logo.png" alt="校园客">
+                </a>
+            </div>
+            <div class="top-title">
+                发布闲置
+                <span class="top-notice">
+                    校园客-专注解决大学生闲置物品
+                </span>
+            </div>
+        </div>
+        </div>
+
+        <div class="publish-main ke-width">
+            <div id="treeBox"></div>
+            <div class="publish-inner content">
+                <div id="publish-img" class="publish-img item">
+                    <h2 class="banner-title"><span class="triangle"></span>添加图片</h2>
+                    <div class="add-img-box p-box">
+                        <div class="images">
+                            <!--<div class="img-item">
+                                <img src="images/goodsImages/58636eadNe121d0ae.jpg">
+                                <a href="javascript:;" class="delete-img">删除</a>
+                            </div>-->
+                        </div>
+                        <div class="images-opt">
+                            <button id="add-img-btn" class="btn add-img-btn">点击添加图片</button>
+                            <!--<input type="file" accept="image/*" id="image-file">-->
+                        </div>
+                    </div>
+                    <form id="img-form" enctype="multipart/form-data" method="post"></form>
+                </div>
+                <div id="publish-name" class="publish-name item">
+                    <h2 class="banner-title"><span class="triangle"></span>添加商品名</h2>
+                    <div class="add-goodsName-box p-box">
+                        <label for="goodsName">商品名称：</label>
+                        <textarea id="goodsName" name="goodsName" maxlength="67" placeholder="添加商品名称/描述等，不超过70字符"></textarea>
+                    </div>
+
+                    <!--右侧背景 绝对定位-->
+                    <div class="bg_ad">
+                        <img src="images/border_bg_img.png" alt="#">
+                    </div>
+                </div>
+                <div id="publish-price" class="publish-price item">
+                    <h2 class="banner-title"><span class="triangle"></span>添加商品价格</h2>
+                    <div class="add-price-box p-box">
+                        <div class="price-inner">
+                            <label for="schoolPrice">校园价<i>(元)</i>：</label>
+                            <input type="number" id="schoolPrice" name="schoolPrice" maxlength="5" placeholder="校园价，单位元">
+                        </div>
+                        <div class="price-inner">
+                            <label for="originPrice">全新价<i>(元)</i>：</label>
+                            <input type="number" id="originPrice" name="originPrice" maxlength="6" placeholder="全新价，单位元">
+                        </div>
+
+                    </div>
+                </div>
+                <div id="publish-sell" class="publish-sell item">
+                    <h2 class="banner-title"><span class="triangle"></span>添加促销信息</h2>
+                    <div class="add-sell-box p-box">
+                        <label for="sell">促销信息：</label>
+                        <textarea name="sell" id="sell" maxlength="26" placeholder="添加促销信息，要求简短明确，长度不超过26个字符"></textarea>
+                    </div>
+                </div>
+                <div id="publish-remark" class="publish-remark item">
+                    <h2 class="banner-title"><span class="triangle"></span>添加备注</h2>
+                    <div class="add-remark-box p-box">
+                        <label for="remark">备注信息：</label>
+                        <textarea name="remark" id="remark" maxlength="66" placeholder="添加商品备注信息（更多信息），长度不超过66字符"></textarea>
+                    </div>
+                </div>
+                <div id="publish-classify" class="publish-classify item">
+                    <h2 class="banner-title"><span class="triangle"></span>添加分类</h2>
+                    <div class="add-classify-box p-box">
+                        <label for="classify_p">所属分类：</label>
+                        <select id="classify_p" name="classify_p"></select>
+                        <select id="classify_c" name="classify_c"></select>
+
+                </div>
+
+            </div>
+
+            <div class="publish-opt">
+                <button class="btn publish-btn" id="publish-btn">确认发布新的商品信息</button>
+                <label><input type="checkbox" checked class="agree-rules"> 同意校园客发布信息守则</label>
+                <a href="javascript:;" class="read-rules">《校园客发布信息守则》</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<footer></footer>
+<script src="js/publishGoods.js"></script>
+<script src="js/common/js/NavigationTree.js"></script>
+</div>
+<input type="file" class="file_input_upload" accept="image/*" style="display:none"/>
+<script type="template" id="publish-rules">
+    <div class="text-left">
+        <p class="title">校园客发布信息守则</p>
+        <p>本协议是您与校园客网站之间就校园客网站服务等相关事宜所订立的契约，请您仔细阅读本协议，您点击同意并继续按钮后，本协议即构成对双方有约束力的法律文件。</p>
+        <p class="title">第1条 本站服务条款的确认和接纳</p>
+        <p><b>1.1</b>本站的各项电子服务的所有权和运作权归校园客所有。用户同意所有注册协议条款并完成注册程序，才能成为本站的正式用户。用户确认：本协议条款是处理双方权利义务的契约，始终有效，法律另有强制性规定或双方另有特别约定的，依其规定。</p>
+        <p><b>1.2</b>用户点击同意本协议的，即视为用户确认自己具有享受本站服务等相应的权利能力和行为能力，能够独立承担法律责任。</p>
+        <p><b>1.3</b>校园客保留在中华人民共和国大陆地区法施行之法律允许的范围内独自决定拒绝服务、关闭用户账户、清除或编辑内容或取消订单的权利。</p>
+        <p class="title">第2条 本站服务</p>
+        <p><b>2.1</b>校园客通过互联网依法为用户提供互联网信息等服务，用户在完全同意本协议及本站规定的情况下，方有权使用本站的相关服务。</p>
+        <p><b>2.2</b>用户必须自行准备如下设备和承担如下开支：（1）上网设备，包括并不限于电脑或者其他上网终端、调制解调器及其他必备的上网装置；（2）上网开支，包括并不限于网络接入费、上网设备租用费、手机流量费等。</p>
+        <p class="title">第3条 用户信息</p>
+        <p><b>3.1</b>用户应自行诚信向本站提供注册资料，用户同意其提供的注册资料真实、准确、完整、合法有效，用户注册资料如有变动的，应及时更新其注册资料。如果用户提供的注册资料不合法、不真实、不准确、不详尽的，用户需承担因此引起的相应责任及后果，并且校园客保留终止用户使用校园客各项服务的权利。</p>
+        <p><b>3.2</b>用户在本站进行浏览、下单购物等活动时，涉及用户真实姓名/名称、通信地址、联系电话、电子邮箱等隐私信息的，本站将予以严格保密，除非得到用户的授权或法律另有规定，本站不会向外界披露用户隐私信息。</p>
+        <p><b>3.3</b>用户注册成功后，将产生用户名和密码等账户信息，您可以根据本站规定改变您的密码。用户应谨慎合理的保存、使用其用户名和密码。用户若发现任何非法使用用户账号或存在安全漏洞的情况，请立即通知本站并向公安机关报案。</p>
+        <p class="title">第4条 用户依法言行义务</p>
+        <p>本协议依据国家相关法律法规规章制定，用户同意严格遵守以下义务：</p>
+        <p>（1）不得传输或发表：煽动抗拒、破坏宪法和法律、行政法规实施的言论，煽动颠覆国家政权，推翻社会主义制度的言论，煽动分裂国家、破坏国家统一的的言论，煽动民族仇恨、民族歧视、破坏民族团结的言论；</p>
+        <p>（2）不得利用本站从事洗钱、窃取商业秘密、窃取个人信息等违法犯罪活动；</p>
+        <p>（3）不得干扰本站的正常运转，不得侵入本站及国家计算机信息系统；</p>
+        <p>（4）不得传输或发表任何违法犯罪的、骚扰性的、中伤他人的、辱骂性的、恐吓性的、伤害性的、庸俗的，淫秽的、不文明的等信息资料；</p>
+        <p>（5）不得发布任何侵犯他人著作权、商标权等知识产权或合法权利的内容；</p>
+        <p>用户应不时关注并遵守本站不时公布或修改的各类合法规则规定。
+        <p class="title">第4条 商品信息</p>
+        <p>本站上的商品价格、数量、是否有货等商品信息随时都有可能发生变动，本站不作特别通知。由于网站上商品信息的数量极其庞大，虽然本站会尽最大努力保证您所浏览商品信息的准确性，但由于众所周知的互联网技术因素等客观原因存在，本站网页显示的信息可能会有一定的滞后性或差错，对此情形您知悉并理解；校园客欢迎纠错，并会视情况给予纠错者一定的奖励。</p>
+    </div>
+</script>
+</body>
+</html>

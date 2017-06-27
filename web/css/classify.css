@@ -1,0 +1,88 @@
+/****/
+.nav-box{
+    border-bottom: 1px solid #4155e1;
+}
+.nav-allbtn{
+    cursor: pointer;
+}
+.nav-allbtn:hover .main-nav-list{
+    display: block;
+}
+.nav-allbtn:hover .arrow{
+    transform: rotate(-180deg);
+    margin-top: 20px;
+}
+
+.cont{
+    margin: 20px auto;
+}
+.menu-title{
+    padding: 15px 0;
+    /*background: #f1f1f1;*/
+}
+.menu-title span{
+    display: inline-block;
+}
+.first-line{
+    width: 24px;
+    height: 0;
+    border-bottom: 1px solid #cccccc;
+    vertical-align: middle;
+}
+.square{
+    width: 12px;
+    height: 12px;
+    background: #f10215;
+}
+.triangle{
+    width:0;
+    height:0;
+    border-width:6px 0 6px 6px;
+    border-style:solid;
+    border-color:transparent transparent transparent #f10215;/*透明 透明 透明 灰*/
+}
+.last-line{
+    display: inline-block;
+    width: 400px;
+    height: 1px;
+    border-bottom: 1px solid #cccccc;
+    vertical-align: middle;
+}
+.menu-name{
+    margin: 0 5px;
+}
+.menu-list{
+    margin-left: 62px;
+}
+.list-ul{
+    display: block;
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.list-ul .items{
+    float: left;
+    background: #f0f0f0;
+    margin-right: 15px;
+    color: #444;
+    margin-bottom: 5px;
+}
+.list-ul .items a{
+    display: block;
+    padding: 5px 25px;
+    color: #454545;
+}
+.list-ul .items a:hover{
+    background: #f10215;
+    color: #ffffff;
+}
+.list-ul .title{
+    background: #f10215;
+}
+.list-ul .title a{
+    color: #ffffff !important;
+}
+/*******************/
+.search-main-inner{
+    width: auto;
+}

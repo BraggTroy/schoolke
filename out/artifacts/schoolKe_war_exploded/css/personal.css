@@ -1,0 +1,277 @@
+.ke-header-main{
+    display: none;
+}
+.personal-top{
+    margin: 20px 0;
+    padding: 0 50px;
+    position: relative;
+    border-bottom: 1px solid #cccccc;
+}
+.top-logo {
+    float: left;
+    width: 180px;
+}
+.top-title{
+    float: left;
+    position: absolute;
+    bottom: 8px;
+    left: 230px;
+    border-left: 1px solid #cccccc;
+    font:  20px/30px "Microsoft YaHei";
+    padding: 3px 18px;
+}
+.p_{
+    color: #999999;
+}
+.top-notice{
+    font-size: 12px;
+    color: #999999;
+    margin-left: 15px;
+}
+.personal-info{
+    position: relative;
+}
+.edit-btn-box{
+    position: absolute;
+    width: 64px;
+    height: 28px;
+    right:25px;
+    top:1px;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+}
+.edit-btn,.save-btn{
+    width: 64px;
+    height: 28px;
+    background: url("../images/tool-buttons.png");
+}
+.edit-btn{
+    display: block;
+    background-position: -1px -48px;
+}
+.edit-btn:hover{
+    background-position: -28px -1px;
+}
+.save-btn{
+    display: none;
+    background-position: -72px -49px;
+}
+.save-btn:hover{
+    background-position: -98px -1px;
+}
+.info-table-box{
+    width: 70%;
+    float: left;
+    /*background: #f0f0f0;*/
+    margin-left: 2%;
+
+}
+.info-table{
+    border: 1px solid #ebebeb;
+    border-collapse:collapse;
+    width: 100%;
+    font-size: 15px;
+}
+.info-table td{
+    border: 1px solid #ebebeb;
+    padding: 0 5px;
+    line-height: 36px;
+}
+.info-table td:nth-child(1){
+    text-align: right;
+    width: 195px;
+    background: #F4F7F9;
+}
+.empty-tr td:nth-child(1){
+    background: #ffffff;
+}
+.empty-tr td{
+    border: none;
+}
+.info-table td input{
+    font-size: 15px;
+    color: #333333;
+    width: 100%;
+    border: none;
+    background-color: #ffffff;
+    height: 29px;
+}
+
+/*****/
+.personal-face{
+    width: 26%;
+    float: left;
+    height: 260px;
+    border: 1px solid #ebebeb;
+    border-left: none;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.face-inner{
+    margin: 30px;
+}
+.img-name{
+    text-align: center;
+}
+.img-name img{
+    width: 110px;
+    height: 110px;
+}
+.img-name p{
+    margin-top: 5px;
+}
+.info-opt{
+    text-align: center;
+    margin-top: 10px;
+}
+.info-opt .btn{
+    background: #f40;
+    font: 16px "Microsoft YaHei";
+    padding: 5px 8px;
+    border-color: #f20;
+}
+.img-box{
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#update-face{
+    position: absolute;
+    bottom: -30px;
+    display: block;
+    width: 110px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    background: rgba(51,51,51,0.2);
+}
+#update-face:hover{
+    background: rgba(51,51,51,0.3);
+}
+#face-input{
+    width: 0;
+    height:0;
+}
+.img-box:hover #update-face{
+    transition: bottom;
+    bottom: 0;
+    transition-duration: 0.5s;
+}
+
+/****************/
+.title-box{
+    margin: 60px 0 10px;
+    border-bottom: 2px solid #cccccc;
+    position: relative;
+}
+.title-box div{
+    display: inline-block;
+    position: absolute;
+    height: 40px;
+    line-height: 40px;
+    bottom: -2px;
+}
+.done-goods{
+    left: 84px;
+}
+.title-box span{
+    display: inline-block;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.title-box div.active{
+    border-bottom: 2px solid #4169E1;
+}
+.current-goods span{
+    border-right: 1px solid #cccccc;
+}
+/********** goods-list-box**********/
+.goods-list-box{
+    width: 100%;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+.user-goods-list{
+    width: 100%;
+}
+.user-goods-list thead{
+    background: #4169E1;
+    border: 1px solid #4169E1;
+    color: #ffffff;
+}
+.user-goods-list thead tr th{
+    white-space: nowrap;
+    line-height: 40px;
+}
+.user-goods-list tbody tr td{
+    vertical-align: middle;
+    padding: 5px;
+    border-bottom: 1px solid #f1f1f1;
+}
+.user-goods-list tbody tr:nth-child(2n){
+    background-color: #fbfbfb;
+}
+.user-goods-list tbody tr:hover{
+    background-color: #f5f5f5;
+}
+.p-check{
+    width: 3%;
+}
+.p-goodsName{
+    width: 36%;
+}
+.p-price,.p-newPrice{
+    width: 8%;
+    text-align: center;
+}
+/*.p-school{
+    width: 14%;
+}*/
+.p-saleInfo{
+    width: 14%;
+}
+.p-more{
+    width: 20%;
+}
+.p-opt{
+    width: 16%;
+}
+.user-goods-list tbody tr td:last-child{
+    text-align: center;
+}
+.p-opt a{
+    color: #f10215;
+    font-size: 14px;
+}
+.p-opt a:hover{
+    text-decoration: underline;
+}
+.goods-list-opt{
+    margin:0 0 20px 5px;
+}
+.selected-done{
+    background: #f1f1f1;
+    border-color: #cccccc;
+    color: #454545;
+    margin-left: 4px;
+    font-size: 14px;
+    padding: 5px 25px;
+    border-radius:inherit;
+}
+.selected-done:hover{
+    border-color: #4169E1;
+}
+.opt{
+    float: left;
+}
+.page-box{
+    float: right;
+}
+header{
+    height: 34px;
+}
+.no-res{
+    width: 100%; text-align: center; line-height: 150px;
+}

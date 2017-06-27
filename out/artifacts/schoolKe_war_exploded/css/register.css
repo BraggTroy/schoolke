@@ -1,0 +1,164 @@
+.register-title{
+    width: 100%;
+    margin: 10px auto;
+    box-shadow: 0 5px 8px #f1f1f1;
+}
+.register-name{
+    font-size: 28px;
+    color: #666666;
+    /*line-height: 48px;*/
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin-left: 20px;
+    border-left: 1px solid #cccccc;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+.r-title-in{
+    width: 1190px;
+    margin: 0 auto;
+}
+.top-right{
+    float: right;
+    margin-top: 48px;
+    color: #888;
+}
+.top-right a{
+    color: #333333;
+}
+.top-right a:hover{
+    text-decoration: underline;
+    color: #4155E1;
+}
+.register-form{
+    width: 740px;
+    margin: 50px auto 20px;
+}
+.register-form form{
+    float: left;
+}
+.box{
+    width: 415px;
+    height: 48px;
+    border: 1px solid #cccccc;
+    float: left;
+}
+.box label{
+    display: inline-block;
+    float: left;
+    width: 90px;
+    height: 48px;
+    padding-left: 20px;
+    line-height: 48px;
+    font-size: 14px;
+    color: #444444;
+    text-align: justify;
+    overflow: hidden;
+}
+.box label:after{
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+.box input{
+    width: 240px;
+    height: 46px;
+    border: none;
+    font: 14px "Microsoft YaHei";
+    margin-left: 30px;
+}
+.info{
+    width: 100%;
+    height: 30px;
+    line-height: 25px;
+    font-size: 12px;
+    color: #999999;
+    overflow: hidden;
+}
+.info i{
+    display: inline-block;
+   vertical-align: text-bottom;
+    height: 16px;
+    width: 16px;
+    margin-right: 5px;
+    background-image: url("../images/icon_register.png");
+}
+.opt{
+    font-size: 14px;
+    color: #333;
+}
+#access{
+    width: 16px;
+    height:16px;
+    vertical-align: middle;
+}
+#submit{
+    width: 415px;
+    height: 48px;
+    background: #f10215;
+    color: #ffffff;
+    font: 16px "Microsoft YaHei";
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.foot{
+    width: 100%;
+    border-top: 1px solid #cccccc;
+    line-height: 80px;
+    color: #999999;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+}
+.foot a{
+    color: #999999;
+}
+.foot a:hover{
+    color: #4155e1;
+    text-decoration: underline;
+}
+.item{
+    width: 415px;
+}
+
+#code{
+    width: 110px;
+}
+#code_show{
+    width: 100px;
+    height: 48px;
+    border-left: 1px solid #cccccc;
+    float: right;
+    color: #454545;
+    text-align: center;
+    font: bold 28px "Microsoft YaHei";
+    user-select: none;  /** 使pointer属性的文本不被选中 **/
+    -moz-user-select:none; /*火狐*/
+    -webkit-user-select:none; /*webkit浏览器*/
+    -ms-user-select:none;
+    background: url("../images/genimage.png") no-repeat;
+    cursor: pointer;
+}
+.result-i{
+    display: none;
+    width: 16px;
+    height: 16px;
+    background: url("../images/icon_register.png");
+
+}
+.text-left{
+    text-align: left;
+}
+.text-left p{
+    line-height: 24px;
+    color: #666666;
+}
+.text-left p b{
+    font-weight: bold;
+}
+.text-left p.title{
+    line-height: 34px;
+    font-weight: bold;
+    color: #333333;
+}
